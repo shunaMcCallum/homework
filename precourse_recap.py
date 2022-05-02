@@ -13,3 +13,7 @@ if age > 18:
 else:
     print("Goodbye, " + name)
 
+while num_1 > 0:
+    print(num_1)
+    num_1 = num_1 - 1
+
