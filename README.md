@@ -4,6 +4,8 @@
 
 ## Week 1 - Programming Fundamentals (Python)
 
+&nbsp;
+
 ### Day 1 - Induction, Unix and Git
 
 * Induction - Half Day
@@ -56,6 +58,8 @@
 
 ## Week 2 - Object Orientation (Python)
 
+&nbsp;
+
 ### Day 1 - Intro to Classes
 
 * [Introduction to Classes](week_02/day_1/classes_intro/classes_intro.md) [:file_folder:](week_02/day_1/classes_intro)
@@ -92,3 +96,42 @@
 
 * Successful Learning: Active Learning - 1 hour
 * **Homework** - [The OO CodeClan Caraoke (CCC)](week_02/weekend_homework/weekend_homework.md) [:file_folder:]()
+
+&nbsp;
+# Intro To Web Programming
+
+## Week 3 - UX, HTML, CSS, Flask
+
+&nbsp;
+
+### Day 1 - HTML, CSS
+
+* [HTML](week_03/day_2/01_html/semantic_html5.md) [:file_folder:](week_03/day_2/01_html)
+* [CSS](week_03/day_2/02_css/css.md) [:file_folder:](week_03/day_2/02_css)
+* **Lab/Homework** - [HTML CSS Lab](week_03/day_2/03_html_css_lab/html_css_lab.md) [:file_folder:](week_03/day_2/03_html_css_lab)
+
+### Day 2 - UX & Layout
+
+* UX Day (1/2 Day)
+* [Flexbox](week_03/day_3/01_css_layout/flexbox/flexbox.md) [:file_folder:](week_03/day_3/01_css_layout/flexbox)
+* [Grid](week_03/day_3/01_css_layout/grid/grid.md) [:file_folder:](week_03/day_3/01_css_layout/grid)
+* **Lab** - [Grid Flexbox Lab](week_03/day_3/02_grid_flexbox_lab/css_grid_flexbox_lab.md) [:file_folder:](week_03/day_3/02_grid_flexbox_lab)
+* **Homework** [Intro to Web and MVC Flipped Learning](week_03/day_2/03_hw_flipped_intro_to_mvc_web/03_hw_intro_to_web_mvc.md) [:file_folder:](week_03/day_2/03_hw_flipped_intro_to_mvc_web)
+
+### Day 3 - Flask
+
+* [Intro to Flask](week_03/day_3/01_intro_to_flask/01_intro_to_flask.md) [:file_folder:](week_03/day_3/01_intro_to_flask)
+* [Flask Models and Jinja2](week_03/day_3/02_flask_models_djinja/02_flask_models_djinja.md) [:file_folder:](week_03/day_3/02_flask_models_djinja)
+* [Lab and HW](week_03/day_3/03_flask_lab_hw/flask_models_lab_hw.md) [:file_folder:](week_03/day_3/03_flask_lab_hw)
+
+### Day 4 - Flask Templates
+
+* [Flask - Templates and Post](week_03/day_4/01_flask_templates/01_flask_templates.md) [:file_folder:](week_03/day_4/01_flask_templates)
+* **Lab** - [Flask](week_03/day_4/02_flask_template_lab/flask_templates_lab.md) [:file_folder:](week_03/day_4/02_flask_template_lab)
+
+### Day 5 - Weekend HW
+
+* Successful Learning: Managing Your Wellbeing - 1 hour
+* [Rock, Paper, Scissors](week_03/weekend_hw_rps/weekend_hw_rps.md) [:file_folder:](week_03/weekend_hw_rps/weekend_hw_rps)
+
+&nbsp;
