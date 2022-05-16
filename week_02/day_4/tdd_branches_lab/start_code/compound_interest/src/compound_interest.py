@@ -1,2 +1,0 @@
-class CompoundInterest:
-    pass
