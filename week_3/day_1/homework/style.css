@@ -1,0 +1,101 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+}
+
+body>header {
+    background-color: dodgerblue;
+    color: white;
+    padding: 20px;
+}
+
+body>header>h1 {
+    display: inline;
+    text-align: left;
+}
+
+body>header>nav {
+    float: right;
+    padding-top: 10px;
+}
+
+body>header>nav>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body>header>nav>ul>li {
+    display: inline;
+}
+
+body>header>nav>ul>li>a {
+    color: white;
+}
+
+body>main>section {
+    width: 100%;
+}
+
+.float-container {
+    padding-left: 40px;
+}
+
+.float-child-left {
+    float: left;
+    margin-left: 60px;
+    width: 20%;
+}
+
+.float-child-right {
+    float: left;
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 60%;
+}
+
+#img {
+    width: 25%;
+    height: 18%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.story {
+    margin-top: 30px;
+    float: right;
+    width: 70%;
+    overflow: visible;
+}
+
+body>main>article {
+    margin-left: 100px;
+    width: 80%;
+}
+
+#comments {
+    margin-left: 100px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+#comment-text-box {
+    height: 150px;
+    width: 100%;
+}
+
+#comments-top-section {
+    margin-bottom: 20px;
+}
+
+#user_img {
+    width: 10%;
+    height: 10%;
+}
+
+body>footer {
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+    padding: 0.25px;
+}
