@@ -108,7 +108,7 @@
 
 * [HTML](week_03/day_1/01_html/semantic_html5.md) [:file_folder:](week_03/day_1/01_html)
 * [CSS](week_03/day_1/02_css/css.md) [:file_folder:](week_03/day_2/02_css)
-* **Lab/Homework** - [HTML CSS Lab](week_03/day_1/03_html_css_lab/html_css_lab.md) [:file_folder:](week_03/day_1/03_html_css_lab)
+* **Lab/Homework** - [HTML CSS Lab](week_03/day_1/03_html_css_lab_hw/html_css_lab.md) [:file_folder:](week_03/day_1/03_html_css_lab_hw)
 
 ### Day 2 - UX & Layout
 
