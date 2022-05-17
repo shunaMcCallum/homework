@@ -113,9 +113,9 @@
 ### Day 2 - UX & Layout
 
 * UX Day (1/2 Day)
-* [Flexbox](week_03/day_3/01_css_layout/flexbox/flexbox.md) [:file_folder:](week_03/day_3/01_css_layout/flexbox)
-* [Grid](week_03/day_3/01_css_layout/grid/grid.md) [:file_folder:](week_03/day_3/01_css_layout/grid)
-* **Lab** - [Grid Flexbox Lab](week_03/day_3/02_grid_flexbox_lab/css_grid_flexbox_lab.md) [:file_folder:](week_03/day_3/02_grid_flexbox_lab)
+* [Flexbox](week_03/day_2/01_css_layout/flexbox/flexbox.md) [:file_folder:](week_03/day_2/01_css_layout/flexbox)
+* [Grid](week_03/day_2/01_css_layout/grid/grid.md) [:file_folder:](week_03/day_2/01_css_layout/grid)
+* [Media Queries](week_03/day_2/01_css_layout/media_queries/media_queries.md) [:file_folder:](week_03/day_2/01_css_layout/media_queries)
 * **Homework** [Intro to Web and MVC Flipped Learning](week_03/day_2/03_hw_flipped_intro_to_mvc_web/03_hw_intro_to_web_mvc.md) [:file_folder:](week_03/day_2/03_hw_flipped_intro_to_mvc_web)
 
 ### Day 3 - Flask
