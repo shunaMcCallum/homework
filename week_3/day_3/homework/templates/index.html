@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{title}} - Book Shop</title>
+</head>
+
+<body>
+    <header>
+        <h1>Book Shop</h1>
+    </header>
+    <section>
+        <h2>Full Order List</h2>
+        {% for order in orders %}
+        <div>
+            <p>
+                <a href="orders/{{index}}">{{order.customer_name}}, {{order.book_title}}</a>
+                <hr>
+            </p>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+
+</html>
+
