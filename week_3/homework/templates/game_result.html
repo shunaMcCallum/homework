@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="results_bpdy">
+<div id="result_header">
+    <h2>{{game_type}}</h2>
+    <h3>Result:</h3>
+</div>
+
+<div id="player_images">
+<div id="player1_img">
+    {% if player1_choice == "rock" %}
+        <img class="img_result"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHSZhqQuKqgAVxfcPn-2yJfMDkGG_Qw1hlfA&usqp=CAU" alt="Rock">
+    {% elif player1_choice == "paper" %}
+         <img class="img_result" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtm5govQePVaRv8KezORBkX4M8QFd3n76d6w&usqp=CAU" alt="Paper">
+    {% elif player1_choice == "scissors" %}
+        <img class="img_result" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuaL3LKyK4KLkrpr5CZwp5QlsZsWIF9XTfg&usqp=CAU" alt="Scissors">
+    {% endif %}
+</div>
+
+<div id="player2_img">
+    {% if player2_choice == "rock" %}
+    <img class="img_result" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHSZhqQuKqgAVxfcPn-2yJfMDkGG_Qw1hlfA&usqp=CAU"  alt="Rock">
+    {% elif player2_choice == "paper" %}
+    <img class="img_result" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtm5govQePVaRv8KezORBkX4M8QFd3n76d6w&usqp=CAU"  alt="Paper">
+    {% elif player2_choice == "scissors" %}
+    <img class="img_result" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuaL3LKyK4KLkrpr5CZwp5QlsZsWIF9XTfg&usqp=CAU"  alt="Scissors">
+    {% endif %}
+</div>
+</div>
+
+<div id="results">
+    <div id="results_top">
+        <p>
+            {{name_1}} chose: <b>{{player1_choice}}!</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{name_2}} chose: <b>{{player2_choice}}!</b>
+        </p>
+    </div>
+
+        <div id="results_bottom">
+            <p>
+                <b>{{result}}!</b>
+           </p>
+        </div>
+
+    <div id="bongo_celebration">
+        {% if result == "Bongo Cat wins by playing rock" %}
+        <img class="bongo_cat" src="https://c.tenor.com/0ygiqFaX-ssAAAAC/bongo-cat-typing.gif" alt="Bongo Cat">
+        {% elif result == "Bongo Cat wins by playing paper" %}
+        <img class="bongo_cat" src="https://c.tenor.com/0ygiqFaX-ssAAAAC/bongo-cat-typing.gif" alt="Bongo Cat">
+        {% elif result == "Bongo Cat wins by playing scissors" %}
+        <img class="bongo_cat" src="https://c.tenor.com/0ygiqFaX-ssAAAAC/bongo-cat-typing.gif" alt="Bongo Cat">
+        {% else %}
+        <img class="bongo_cat" src="https://acegif.com/wp-content/gif/confetti-4.gif" alt="Bongo Cat">
+        {% endif %}
+    </div>
+</div>
+
+    <div id="play_again">
+        <p>Hit the button below if you would like to play again!</p>
+        <a href="/play">Play again</a>
+    </div>
+</div>
+</div>
+
+{% endblock %}

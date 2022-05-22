@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="comp_game_header">
+    <h2>{{game_type}}</h2>
+</div>
+
+<div id="bongo_cat_image">
+    <img class="bongo_cat" src="https://c.tenor.com/0ygiqFaX-ssAAAAC/bongo-cat-typing.gif" alt="Bongo Cat">
+</div>
+
+<p id="comp_game_para_1">Let's see if you can beat Bongo Cat!</p>
+<p id="comp_game_para_2">Please enter your name below and then make your choice from the drop-down menu.</p>
+
+<div>
+    <form id="comp_game_form" method="post" action="/play/result">
+        <label id="form_name_label" for="name"><b>Player Name: </b></label>
+            <input id="form_name_input" type="text" name="name" id="name"><br>
+        <label id="form_choice_label" for="player_choice"><b>Your Choice: </b></label>
+            <select id="form_choice_input" name="player_choice" id="player_choice"><br>
+                <option disabled selected value> --select an option-- </option>
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+            </select><br>
+        <input id="form_submit" type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}
