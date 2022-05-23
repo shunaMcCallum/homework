@@ -1,0 +1,15 @@
+body {
+  background-color: #92BCEA;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: black;
+}
+
+.navLink {
+    display: inline;
+}
