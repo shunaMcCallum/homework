@@ -131,7 +131,38 @@
 
 ### Day 5 - Weekend HW
 
-* Successful Learning: Managing Your Wellbeing - 1 hour
 * [Rock, Paper, Scissors](week_03/weekend_hw_rps/weekend_hw_rps.md) [:file_folder:](week_03/weekend_hw_rps/weekend_hw_rps)
 
 &nbsp;
+
+## Week 4 - Databases and SQL
+
+### Day 1 - SQL
+
+* [Intro to SQL](week_04/day_1/01_intro_to_sql/01_databases_and_sql_intro.md) [:file_folder:](week_04/day_1/01_intro_to_sql)
+* [Assocations](week_04/day_1/01_intro_to_sql/02_associations_intro.md)
+* [One to many](week_04/day_1/01_intro_to_sql/03_one_to_many.md)
+* **Lab** - [Cinema](week_04/day_1/02_cinema_crud_sql_lab/lab.md) [:file_folder:](week_04/day_1/02_cinema_crud_sql_lab)
+* **Homework** - [Psycopg2 Flipped Learning](week_04/day_1/03_psycopg2_flipped_hw/flipped_lesson.md) [:file_folder:](week_04/day_1/03_psycopg2_flipped_hw)
+
+### Day 2 - One to Many Task List
+* [One To Many Task List](week_04/day_2/01_one_to_many_task_list/one_to_many.md) [:file_folder:](week_04/day_2/01_one_to_many_task_list)
+* [CRUD actions](week_04/day_2/01_crud_actions)
+* **Lab** - [Music Library](week_04/day_2/02_music_library_lab/music_lab.md) [:file_folder:](week_04/day_2/02_music_library_lab)
+* **Homework** - [Full Stack Flipped Learning](week_04/day_2/03_hw_fullstack_intro_flipped/full_stack_part_1.md) [:file_folder:](week_04/day_2/03_hw_fullstack_intro_flipped)
+
+### Day 3 - Flask FullStack App
+
+
+* [Full Stack Task List](week_04/day_3/01_full_stack_task_list/full_stack_part_2.md) [:file_folder:](week_04/day_3/01_full_stack_task_list)
+* **Lab** - [One to Many Lab](week_04/day_3/02_one_to_many_lab/one_to_many_lab.md) [:file_folder:](week_04/day_3/02_one_to_many_lab)
+* **Homework** - [SQL Inner Join Flipped Learning](week_04/day_3/03_inner_joins_flipped_hw/many_to_many.md) [:file_folder:](week_04/day_3/03_inner_joins_flipped_hw/)
+
+### Day 4 - Many To Many 
+
+* [Many to Many Quest Advisor](week_04/day_4/01_many_to_many_quest_advisor/many_to_many.md) [:file_folder:](week_04/day_4/01_many_to_many_quest_advisor)
+* **Lab** - [Many to many flask app - Zombies](week_04/day_4/02_lab_many_to_many_zombies/many_to_many_zombies.md) [:file_folder:](week_04/day_4/02_lab_many_to_many_zombies)
+* Successful Learning: Managing Your Project - 1 hour
+* [Consider the User](week_04/day_4/consider_the_user.md) (Summary of Wojtek's full day)
+* [PDA Guidance-Diagrams and Evidence](https://docs.google.com/presentation/d/1PoL3BnYFmo7wn5m1BD09V4orIt-SiP694ZdzyTibI38/edit) Lesson 1 - 1 hour
+* [**Assignment Of Projects** :file_folder:](projects)
