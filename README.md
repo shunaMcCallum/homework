@@ -162,7 +162,7 @@
 ### Day 4 - Many To Many 
 
 * [Many to Many Quest Advisor](week_04/day_4/01_many_to_many_quest_advisor/many_to_many.md) [:file_folder:](week_04/day_4/01_many_to_many_quest_advisor)
-* **Lab** - [Many to many flask app - Zombies](week_04/day_4/02_lab_many_to_many_zombies/many_to_many_zombies.md) [:file_folder:](week_04/day_4/02_lab_many_to_many_zombies)
+* [Many to many flask app - Zombies](week_04/day_4/02_lab_many_to_many_zombies/many_to_many_zombies.md) [:file_folder:](week_04/day_4/02_lab_many_to_many_zombies)
 * Successful Learning: Managing Your Project - 1 hour
 * [Consider the User](week_04/day_4/consider_the_user.md) (Summary of Wojtek's full day)
 * [PDA Guidance-Diagrams and Evidence](https://docs.google.com/presentation/d/1PoL3BnYFmo7wn5m1BD09V4orIt-SiP694ZdzyTibI38/edit) Lesson 1 - 1 hour
