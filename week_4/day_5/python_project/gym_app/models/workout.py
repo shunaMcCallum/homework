@@ -1,4 +1,4 @@
-class Session:
+class Workout:
 
     def __init__(self, name, date, description, duration, id = None):
         self.name = name

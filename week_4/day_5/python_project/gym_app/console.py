@@ -1,6 +1,6 @@
 import pdb
 from models.member import Member
-from models.session import Session
+from models.workout import Workout
 from models.booking import Booking
 
 # IMPORT REPOSITORIES HERE
