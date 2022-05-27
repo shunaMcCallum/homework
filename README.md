@@ -143,7 +143,7 @@
 * [Assocations](week_04/day_1/01_intro_to_sql/02_associations_intro.md)
 * [One to many](week_04/day_1/01_intro_to_sql/03_one_to_many.md)
 * **Lab** - [Cinema](week_04/day_1/02_cinema_crud_sql_lab/lab.md) [:file_folder:](week_04/day_1/02_cinema_crud_sql_lab)
-* **Homework** - [Psycopg2 Flipped Learning](week_04/day_1/03_psycopg2_flipped_hw/flipped_lesson.md) [:file_folder:](week_04/day_1/03_psycopg2_flipped_hw)
+* **Homework** - [How to connect to a database](week_04/day_1/03_flipped_hw/flipped_lesson.md) [:file_folder:](week_04/day_1/03_flipped_hw)
 
 ### Day 2 - One to Many Task List
 * [CRUD actions](week_04/day_2/01_crud_actions)
@@ -162,8 +162,33 @@
 ### Day 4 - Many To Many 
 
 * [Many to Many Quest Advisor](week_04/day_4/01_many_to_many_quest_advisor/many_to_many.md) [:file_folder:](week_04/day_4/01_many_to_many_quest_advisor)
-* [Many to many flask app - Zombies](week_04/day_4/02_lab_many_to_many_zombies/many_to_many_zombies.md) [:file_folder:](week_04/day_4/02_lab_many_to_many_zombies)
-* Successful Learning: Managing Your Project - 1 hour
+* [Many to many flask app - Zombies](week_04/day_4/02_many_to_many_zombies_example/many_to_many_zombies.md) [:file_folder:](week_04/day_4/02_many_to_many_zombies_example)
+* [Successful Learning: Managing Your Project](week_04/day_4/Project_Management_2022.pdf) - 1 hour
 * [Consider the User](week_04/day_4/consider_the_user.md) (Summary of Wojtek's full day)
-* [PDA Guidance-Diagrams and Evidence](https://docs.google.com/presentation/d/1PoL3BnYFmo7wn5m1BD09V4orIt-SiP694ZdzyTibI38/edit) Lesson 1 - 1 hour
-* [**Assignment Of Projects** :file_folder:](projects)
+* [PDA Guidance-Diagrams and Evidence](week_04/day_4/PDA_Guidance.pdf) Lesson 1 - 1 hour
+* [**Assignment Of Projects** :file_folder:](week_04/projects)
+
+
+&nbsp;
+## Week 5 - Monday 30 May - Python Project Week 
+
+### Day 1
+
+* Projects
+
+### Day 2 
+
+* Projects
+
+### Day 3
+
+* Hand in of Projects at 12pm
+* How to present Tech
+* Presentation guidelines
+
+### Day 4
+
+* Presentations
+* Retrospective
+
+* [Static and Dynamic PDA Task](week_04/Static_and_Dynamic_Task_A/Static_&_Dynamic_Testing.md)
