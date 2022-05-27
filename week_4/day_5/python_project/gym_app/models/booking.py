@@ -1,7 +1,7 @@
 class Booking:
 
-    def __init__(self, member, session, id = None):
+    def __init__(self, member, workout, id = None):
         self.member = member
-        self.session = session
+        self.workout = workout
         self.id = id
     
