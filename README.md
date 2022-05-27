@@ -189,5 +189,4 @@
 
 * Presentations
 * Retrospective
-
 * [Static and Dynamic PDA Task](week_04/Static_and_Dynamic_Task_A/Static_&_Dynamic_Testing.md)
