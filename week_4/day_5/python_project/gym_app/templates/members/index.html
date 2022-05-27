@@ -6,6 +6,9 @@
     <ul>
         {% for member in members %}
         <li>{{member.id}} | {{member.first_name}} {{member.last_name}}</li>
+        <form action="/members/{{member.id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
         {% endfor %}
     </ul>
 </div>

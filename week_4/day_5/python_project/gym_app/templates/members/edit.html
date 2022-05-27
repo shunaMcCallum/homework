@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>update member</h1>
+
+<form action="/members/{{member.id}}" method="post">
+    <div>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" value={{member.first_name}} placeholder={{member.first_name}} required autofocus>
+    </div>
+    <div>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" value={{member.last_name}} placeholder={{member.last_name}} required>
+    </div>
+    <div>
+        <label for={{member.dob}}>Date of Birth</label>
+        <input type="date" id="dob" name="dob" value={{member.dob}} required>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+
+<div>
+
+</div>
+
+{% endblock %}

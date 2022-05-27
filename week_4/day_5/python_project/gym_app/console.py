@@ -47,6 +47,10 @@ booking_repository.save(booking4)
 # for member in members:
 #     print(member.__dict__)
 
+#  Testing show one member
+# member = member_repository.select(41)
+# print(member.__dict__)
+
 # Testing workouts save and select
 # workouts = workout_repository.select_all()
 # for workout in workouts:
@@ -55,7 +59,7 @@ booking_repository.save(booking4)
 # Testing workouts delete
 # workout_repository.delete(5)
 
-# Testing wokrouts update
+# Testing workouts update
 # workout1.name = "HIIT Workout"
 # workout_repository.update(workout1)
 
@@ -76,13 +80,13 @@ booking_repository.save(booking4)
 #     print(booking.__dict__)
 
 # Testing select one member's workouts
-member_workouts = member_repository.get_workouts(member1)
-for workout in member_workouts:
-    print(workout.__dict__)
+# member_workouts = member_repository.get_workouts(member1)
+# for workout in member_workouts:
+#     print(workout.__dict__)
 
 # Testing select one workout's members
-workout_members = workout_repository.get_members(workout1)
-for member in workout_members:
-    print(member.__dict__)
+# workout_members = workout_repository.get_members(workout1)
+# for member in workout_members:
+#     print(member.__dict__)
 
 pdb.set_trace()

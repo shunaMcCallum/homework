@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>member view</h1>
+<div>
+    {{member.first_name}} {{member.last_name}}
+</div>
+<div>
+    {{member.dob}}
+</div>
+
+<form action="/members/{{member.id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
+
+<ul>
+    {% for workout in workouts %}
+    <li>{{workout.name}}</li>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
