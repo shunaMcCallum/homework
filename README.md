@@ -148,7 +148,6 @@
 ### Day 2 - One to Many Task List
 * [CRUD actions](week_04/day_2/01_crud_actions)
 * [One To Many Task List](week_04/day_2/02_one_to_many_task_list/one_to_many.md) [:file_folder:](week_04/day_2/02_one_to_many_task_list)
-
 * **Lab** - [Music Library](week_04/day_2/03_music_library_lab/music_lab.md) [:file_folder:](week_04/day_2/03_music_library_lab)
 * **Homework** - [Full Stack Flipped Learning](week_04/day_2/04_hw_fullstack_intro_flipped/full_stack_part_1.md) [:file_folder:](week_04/day_2/04_hw_fullstack_intro_flipped)
 
