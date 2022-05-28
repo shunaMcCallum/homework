@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>workout view</h1>
+<div>
+    {{workout.name}}
+</div>
+<div>
+    {{workout.date}}
+</div>
+
+<!-- DELETE BUTTON NOT CURRENTLY WORKING - NEED TO FIX!!! -->
+<form action="workouts/{{workout.id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
+
+<ul>
+    {% for member in members %}
+    <li>{{member.first_name}} {{member.last_name}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

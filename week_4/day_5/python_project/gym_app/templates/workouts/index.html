@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>workouts</h1>
+<div>
+    <ul>
+        {% for workout in workouts %}
+        <li>{{workout.id}} | {{workout.name}} {{workout.date}}</li>
+        <form action="/workouts/{{workout.id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
