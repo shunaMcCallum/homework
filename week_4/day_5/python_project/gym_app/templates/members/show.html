@@ -3,20 +3,26 @@
 {% block content %}
 <h1>member view</h1>
 <div>
-    {{member.first_name}} {{member.last_name}}
+    Name: {{member.first_name}} {{member.last_name}}
 </div>
 <div>
-    {{member.dob}}
+    Date of Birth: {{member.dob}}
 </div>
+<button>
+    <a href="/members/{{member.id}}/update">Update Details</a>
+</button>
 
-<form action="/members/{{member.id}}/delete" method="POST">
-    <button>Delete</button>
-</form>
-
+<h3>Bookings:</h3>
 <ul>
     {% for workout in workouts %}
-    <li>{{workout.name}}</li>
+    <li>Name: <a href="/workouts/{{workout.id}}">{{workout.name}}</a> | Date: {{workout.date}}</li>
     {% endfor %}
 </ul>
+<button>
+    <a href="/bookings/create">Add New Booking</a>
+</button>
+<form action="/members/{{member.id}}/delete" method="POST">
+    <button>Delete Member</button>
+</form>
 
 {% endblock %}

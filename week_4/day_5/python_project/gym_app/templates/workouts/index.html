@@ -3,14 +3,23 @@
 {% block content %}
 <h1>workouts</h1>
 <div>
+    <p>Below is a full list of workout classes on offer. Click on a workout's name to view its full details.</p>
+    <p>If you'd like to book a member into a workout just press the Book button next to the relevant name.</p>
+    <p>Or, if you'd like to delete a workout just press the Delete button next to the relevant name.</p>
     <ul>
         {% for workout in workouts %}
         <li>{{workout.id}} | {{workout.name}} {{workout.date}}</li>
         <form action="/workouts/{{workout.id}}/delete" method="POST">
             <button>Delete</button>
         </form>
+        <button>
+            <a href="/bookings/create">Add Booking</a>
+        </button>
         {% endfor %}
-    </ul>
+        </ul>
+        <button>
+            <a href="/workouts/create">Add New Workout</a>
+        </button>
 </div>
 
 {% endblock %}
