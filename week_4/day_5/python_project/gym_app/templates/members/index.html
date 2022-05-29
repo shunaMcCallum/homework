@@ -4,19 +4,28 @@
 <h1>members</h1>
 <div>
     <p>Below is a full list of members. Click on a member's name to view their full details.</p>
-    <p>If you'd like to book a member into a class just press the Book button next to the relevant name.</p> 
-    <p>Or, if you'd like to delete a member just press the dDelete button next to the relevant name.</p>
-    <ul>
+    <p>If you'd like to book a member into a workout just press the Book button next to the relevant name.</p> 
+    <p>Or, if you'd like to delete a member just press the Delete button next to the relevant name.</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+        </tr>
         {% for member in members %}
-        <li>{{member.id}} | <a href="/members/{{member.id}}">{{member.first_name}} {{member.last_name}}</a></li>
-        <form action="/members/{{member.id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
-        <button>
-            <a href="/bookings/create">Book</a>
-        </button>
+        <tr>
+            <td><a href="/members/{{member.id}}">{{member.first_name}} {{member.last_name}}</a></td>
+            <td>{{member.id}}</td>
+            <td>
+                <form action="/members/{{member.id}}/delete" method="POST">
+                <button>Delete</button>
+                </form>
+            </td>
+            <td>
+                <button><a href="/bookings/create">Book</a></button>
+            </td>
         {% endfor %}
-    </ul>
+        </tr>
+    </table>
     <button>
         <a href="/members/create">Add New Member</a>
     </button>

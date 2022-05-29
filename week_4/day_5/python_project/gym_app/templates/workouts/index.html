@@ -6,17 +6,30 @@
     <p>Below is a full list of workout classes on offer. Click on a workout's name to view its full details.</p>
     <p>If you'd like to book a member into a workout just press the Book button next to the relevant name.</p>
     <p>Or, if you'd like to delete a workout just press the Delete button next to the relevant name.</p>
-    <ul>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>ID</th>
+        </tr>
         {% for workout in workouts %}
-        <li>{{workout.id}} | {{workout.name}} {{workout.date}}</li>
-        <form action="/workouts/{{workout.id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
-        <button>
-            <a href="/bookings/create">Add Booking</a>
-        </button>
+        <tr>
+            <td>{{workout.date}}</td>
+            <td><a href="/workouts/{{workout.id}}">{{workout.name}}</a></td>
+            <td>{{workout.duration}}</td>
+            <td>{{workout.id}}</td>
+            <td>
+                <form action="/workouts/{{workout.id}}/delete" method="POST">
+                <button>Delete</button>
+                </form>
+            </td>
+            <td>
+                <button><a href="/bookings/create">Add Booking</a></button>
+            </td>
         {% endfor %}
-        </ul>
+        </tr>
+    </table>
         <button>
             <a href="/workouts/create">Add New Workout</a>
         </button>

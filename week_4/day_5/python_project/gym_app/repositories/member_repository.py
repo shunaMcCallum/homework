@@ -10,6 +10,10 @@ def save(member):
     return member
 
 
+def sort_function(member):
+    return member.last_name
+
+
 def select_all():
     members = []
     sql = "SELECT * FROM members"
@@ -17,6 +21,7 @@ def select_all():
     for row in results:
         member = Member(row['first_name'], row['last_name'], row['dob'], row['id'])
         members.append(member)
+    members.sort(key=sort_function)
     return members
 
 

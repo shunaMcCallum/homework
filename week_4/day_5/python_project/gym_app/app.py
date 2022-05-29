@@ -12,7 +12,8 @@ app.register_blueprint(workouts_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    route_name = "the gym"
+    return render_template('index.html',route_name=route_name)
 
 if __name__ == '__main__':
     app.run(debug=True)

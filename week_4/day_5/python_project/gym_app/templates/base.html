@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>the gym</title>
 </head>
 <body>
+    <div class="base">
     <header>
-        <nav>
-            <ul>
-                <li><a href="/members">Members</a></li>
-                <li><a href="/workouts">Workouts</a></li>
-                <li><a href="/bookings">Bookings</a></li>
-            </ul>
-        </nav>
+        <h1 class="page_headers">{{route_name}}</h1>
     </header>
+    <div class="nav_bar">
+        <nav>
+                <a class="nav_item" id="nav_member" href="/members">Members</a>
+                <a class="nav_item" id="nav_workout" href="/workouts">Workouts</a>
+                <a class="nav_item" id="nav_booking" href="/bookings">Bookings</a>
+        </nav>
+    </div>
+    </div>
+
+    <div class="block_content">
         {% block content %}
         
         {% endblock%}
+    </div>
 </body>
 <footer>
 

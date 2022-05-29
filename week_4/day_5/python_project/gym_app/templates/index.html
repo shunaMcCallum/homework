@@ -1,18 +1,18 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>the gym</h1>
-<h3>Welcome to your gym management tool!</h3>
-<div>
-    You can use this site to:
-    <ul>
-        <li>Add and manage your members</li>
-        <li>Add and manage the workout classes available at your gym</li>
-        <li>Book members into your workouts</li>
-    </ul>
-</div>
-<div>
-    Just use the menu above to manage your members, workouts and bookings!
+<div class="page_container">
+    <h3>Welcome to your gym management tool!</h3>
+
+    <p>You can use this site to:</p>
+
+    <div class="home_list">
+        <p id="home_list_1">Add and manage your members</p>
+        <p id="home_list_2">Add and manage the workout classes available at your gym</p>
+        <p id="home_list_3">Book members into your workouts</p>
+    </div>
+
+    <p>Just click the buttons above to manage your members, workouts and bookings!</p>
 </div>
 
 {% endblock %}

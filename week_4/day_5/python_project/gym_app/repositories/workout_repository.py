@@ -10,14 +10,18 @@ def save(workout):
     return workout
 
 
+def sort_fuction(workout):
+    return workout.date
+
+
 def select_all():
     workouts = []
     sql = "SELECT * FROM workouts"
     results = run_sql(sql)
-
     for row in results:
         workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['id'])
         workouts.append(workout)
+    workouts.sort(key=sort_fuction)
     return workouts
 
 
