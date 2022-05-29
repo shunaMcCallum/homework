@@ -3,21 +3,34 @@
 {% block content %}
 <h1>workout view</h1>
 <div>
-    {{workout.name}}
+    <b>Name: </b> {{workout.name}}
 </div>
 <div>
-    {{workout.date}}
+    <b>Date: </b> {{workout.date}}
 </div>
+<div>
+    <b>Description: </b> {{workout.description}}
+</div>
+<div>
+    <b>Duration: </b> {{workout.duration}} mins
+</div>
+<button>
+    <a href="/workouts/{{workout.id}}/update">Update Details</a>
+</button>
 
-<!-- DELETE BUTTON NOT CURRENTLY WORKING - NEED TO FIX!!! -->
-<form action="workouts/{{workout.id}}/delete" method="POST">
-    <button>Delete</button>
-</form>
-
+<h3>Bookings:</h3>
 <ul>
     {% for member in members %}
     <li>{{member.first_name}} {{member.last_name}}</li>
     {% endfor %}
 </ul>
+
+<button>
+    <a href="/bookings/create">Add New Booking</a>
+</button>
+
+<form action="/workouts/{{workout.id}}/delete" method="POST">
+    <button>Delete</button>
+</form>
 
 {% endblock %}

@@ -1,7 +1,6 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>member view</h1>
 <div>
     Name: {{member.first_name}} {{member.last_name}}
 </div>
@@ -18,9 +17,11 @@
     <li>Name: <a href="/workouts/{{workout.id}}">{{workout.name}}</a> | Date: {{workout.date}}</li>
     {% endfor %}
 </ul>
+
 <button>
     <a href="/bookings/create">Add New Booking</a>
 </button>
+
 <form action="/members/{{member.id}}/delete" method="POST">
     <button>Delete Member</button>
 </form>
