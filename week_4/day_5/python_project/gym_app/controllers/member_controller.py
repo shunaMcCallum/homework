@@ -19,12 +19,12 @@ def member_show(id):
 
 # ADD NEW MEMBER
 @members_blueprint.route("/members/create")
-def create_member():
+def add_member():
     return render_template("members/create.html")
 
 # CREATE MEMBER
 @members_blueprint.route("/members", methods=['POST'])
-def add_member():
+def create_member():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     dob = request.form['dob']

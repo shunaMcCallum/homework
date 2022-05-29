@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>bookings</h1>
+<div>
+    <ul>
+        {% for booking in bookings %}
+        <li>{{booking.id}} | {{booking.member.first_name}} {{booking.member.last_name}} | {{booking.workout.name}}</li>
+        <form action="/bookings/{{booking.id}}/delete" method="POST">
+            <button>Delete</button>
+        </form>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
