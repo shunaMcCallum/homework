@@ -1,16 +1,33 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>bookings</h1>
 <div>
-    <ul>
+    <p>Below is a list of all bookings on the system.</p>
+    <p>If you'd like to make a new booking just click the Add New Booking button below.</p>
+    <p>Or, if you'd like to delete a booking just press the Delete button next to the relevant booking.</p>
+    
+    <button><a href="/bookings/create">Add New Booking</a></button>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Member Name</th>
+            <th>Workout</th>
+        </tr>
         {% for booking in bookings %}
-        <li>{{booking.id}} | {{booking.member.first_name}} {{booking.member.last_name}} | {{booking.workout.name}}</li>
-        <form action="/bookings/{{booking.id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
+        <tr>
+        <td>{{booking.id}}</td>
+        <td>{{booking.member.first_name}} {{booking.member.last_name}}</td>
+        <td>{{booking.workout.name}}</td>
+        <td>
+            <form action="/bookings/{{booking.id}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
+        </td>
         {% endfor %}
-    </ul>
+    </table>
+
+    <button><a href="/bookings/create">Add New Booking</a></button>
 </div>
 
 {% endblock %}
