@@ -1,33 +1,40 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div>
+<div class="index_page_container">
     <p>Below is a list of all bookings on the system.</p>
-    <p>If you'd like to make a new booking just click the Add New Booking button below.</p>
+    <p>Click on the name of the member or workout to view more of their details.</p>
+    <p>If you'd like to make a new booking, click either of the Add New Booking buttons.</p>
     <p>Or, if you'd like to delete a booking just press the Delete button next to the relevant booking.</p>
     
-    <button><a href="/bookings/create">Add New Booking</a></button>
+    <button class="index_page_button" id="index_page_top_button">
+        <a class="index_page_link" href="/bookings/create">Add New Booking</a>
+    </button>
 
-    <table>
-        <tr>
+    <table class="index_table">
+        <tr class="index_table_headers" id="index_table_headers_bookings">
             <th>ID</th>
             <th>Member Name</th>
             <th>Workout</th>
+            <th>Delete</th>
         </tr>
         {% for booking in bookings %}
-        <tr>
+        <tr class="index_table_content">
         <td>{{booking.id}}</td>
-        <td>{{booking.member.first_name}} {{booking.member.last_name}}</td>
-        <td>{{booking.workout.name}}</td>
+        <td><a class="index_page_link" id="index_page_link_bookings" href="/members/{{booking.member.id}}">{{booking.member.first_name}} {{booking.member.last_name}}</a></td>
+        <td><a class="index_page_link" id="index_page_link_bookings" href="/workouts/{{booking.workout.name}}">{{booking.workout.name}}</a></td>
         <td>
             <form action="/bookings/{{booking.id}}/delete" method="POST">
-                <button>Delete</button>
+                <button class="index_page_button">Delete</button>
             </form>
         </td>
         {% endfor %}
     </table>
 
-    <button><a href="/bookings/create">Add New Booking</a></button>
+    <button class="index_page_button" id="index_page_button_bottom">
+        <a class="index_page_link" href="/bookings/create">Add New Booking</a>
+    </button>
+
 </div>
 
 {% endblock %}

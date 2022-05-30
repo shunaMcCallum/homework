@@ -1,37 +1,37 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div>
-    <p>Below is a full list of workout classes on offer. Click on a workout's name to view its full details.</p>
-    <p>If you'd like to book a member into a workout just press the Book button next to the relevant name.</p>
-    <p>Or, if you'd like to delete a workout just press the Delete button next to the relevant name.</p>
-    <table>
-        <tr>
+<div class="index_page_container">
+    <p>Below is a full list of workout classes on offer. Click on the View Details button to view a workout's full details and book members into the workout.</p>
+    <p>To add a new workout, click either of the Add Workout buttons.</p>
+
+    <button class="index_page_button" id="index_page_top_button" id="index_page_button_workouts">
+        <a class="index_page_link" href="/workouts/create">Add New Workout</a>
+    </button>
+
+    <table class="index_table">
+        <tr class="index_table_headers" id="index_table_headers_workouts">
             <th>Date</th>
             <th>Name</th>
             <th>Duration</th>
             <th>ID</th>
+            <th>View</th>
         </tr>
         {% for workout in workouts %}
-        <tr>
+        <tr class="index_table_content">
             <td>{{workout.date}}</td>
-            <td><a href="/workouts/{{workout.id}}">{{workout.name}}</a></td>
+            <td>{{workout.name}}</td>
             <td>{{workout.duration}} mins</td>
             <td>{{workout.id}}</td>
-            <td>
-                <form action="/workouts/{{workout.id}}/delete" method="POST">
-                <button>Delete</button>
-                </form>
-            </td>
-            <td>
-                <button><a href="/bookings/create">Add Booking</a></button>
-            </td>
+            <td><button class="index_page_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
         {% endfor %}
         </tr>
     </table>
-        <button>
-            <a href="/workouts/create">Add New Workout</a>
+
+        <button class="index_page_button" id="index_page_bottom_button">
+            <a class="index_page_link" href="/workouts/create">Add New Workout</a>
         </button>
+        
 </div>
 
 {% endblock %}

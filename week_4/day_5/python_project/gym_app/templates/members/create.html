@@ -1,28 +1,41 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<div class="create_page_container">
+
 <h1>create new member</h1>
 
-<form action="/members" method="post">
+<form class="create_form" action="/members" method="post">
+    <table class="create_table">
+    <tr>
+        <td>
+            <label class="create_form_label" for="first_name">First Name</label>
+        </td>
+        <td>
+            <input class="create_form_input" type="text" id="first_name" name="first_name" placeholder="first name" required autofocus>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="create_form_label" for="last_name">Last Name</label>
+        </td>
+        <td>
+            <input class="create_form_input" type="text" id="last_name" name="last_name" placeholder="last name" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="create_form_label" for="dob">Date of Birth</label>
+        </td>
+        <td>
+            <input class="create_form_input" type="date" id="dob" name="dob" required>
+        </td>
+    </tr>
+    </table>
     <div>
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="first name" required autofocus>
-    </div>
-    <div>
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="last_name" required>
-    </div>
-    <div>
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob" required>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
+        <button class="create_page_button" type="submit">Submit</button>
     </div>
 </form>
-
-
-<div>
    
 </div>
 

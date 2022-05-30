@@ -36,7 +36,7 @@ def add_workout():
 
     workout = Workout(name, date, description, duration)
     workout_repository.save(workout)
-    return redirect("/workouts", route_name=route_name)
+    return redirect("/workouts")
 
 # EDIT WORKOUT
 @workouts_blueprint.route("/workouts/<id>/update")
@@ -64,4 +64,4 @@ def update_workout(id):
 def delete_workout(id):
     route_name = "workouts"
     workout_repository.delete(id)
-    return redirect("/workouts", route_name=route_name)
+    return redirect("/workouts")

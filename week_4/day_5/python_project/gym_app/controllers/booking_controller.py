@@ -33,11 +33,11 @@ def create_booking():
 
     booking = Booking(member, workout)
     booking_repository.save(booking)
-    return redirect("/bookings", route_name=route_name)
+    return redirect("/bookings")
 
 # DELETE BOOKING
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
 def delete_booking(id):
     route_name = "bookings"
     booking_repository.delete(id)
-    return redirect("/bookings", route_name=route_name)
+    return redirect("/bookings")

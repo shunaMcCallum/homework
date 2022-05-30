@@ -35,7 +35,7 @@ def create_member():
 
     member = Member(first_name, last_name, dob)
     member_repository.save(member)
-    return redirect("/members", route_name=route_name)
+    return redirect("/members")
 
 # EDIT MEMBER
 @members_blueprint.route("/members/<id>/update")
@@ -62,4 +62,4 @@ def update_member(id):
 def delete_member(id):
     route_name = "members"
     member_repository.delete(id)
-    return redirect("/members", route_name=route_name)
+    return redirect("/members")

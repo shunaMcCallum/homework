@@ -18,6 +18,10 @@
     <a href="/workouts/{{workout.id}}/update">Update Details</a>
 </button>
 
+<form action="/workouts/{{workout.id}}/delete" method="POST">
+    <button>Delete Workout</button>
+</form>
+
 <h3>Bookings:</h3>
 <ul>
     {% for member in members %}
@@ -29,8 +33,6 @@
     <a href="/bookings/create">Add New Booking</a>
 </button>
 
-<form action="/workouts/{{workout.id}}/delete" method="POST">
-    <button>Delete</button>
-</form>
+
 
 {% endblock %}
