@@ -1,36 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>workout view</h1>
-<div>
-    <b>Name: </b> {{workout.name}}
-</div>
-<div>
-    <b>Date: </b> {{workout.date}}
-</div>
-<div>
-    <b>Description: </b> {{workout.description}}
-</div>
-<div>
-    <b>Duration: </b> {{workout.duration}} mins
-</div>
-<button>
-    <a href="/workouts/{{workout.id}}/update">Update Details</a>
-</button>
+<div class="show_page_container">
 
-<form action="/workouts/{{workout.id}}/delete" method="POST">
-    <button>Delete Workout</button>
-</form>
+<h1>view workout</h1>
 
-<h3>Bookings:</h3>
-<ul>
+<div class="show_page_top_details">
+    <div><b>Name: </b> {{workout.name}}</div>
+    <div><b>Date: </b> {{workout.date}}</div>
+    <div><b>Description: </b> {{workout.description}}</div>
+    <div><b>Duration: </b> {{workout.duration}} mins</div>
+</div>
+
+<div id="show_page_top_buttons">
+<button class="show_page_button"><a class="show_page_link" href="/workouts/{{workout.id}}/update">Update Details</a></button>
+<form action="/workouts/{{workout.id}}/delete" method="POST"><button class="show_page_button">Delete Workout</button></form>
+</div>
+
+<h3 class="bookings_header">Bookings:</h3>
+<table class="show_page_table">
+    <tr class="show_page_table_headers" id="show_page_table_headers_workouts">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>View</th>
+    </tr>
     {% for member in members %}
-    <li>{{member.first_name}} {{member.last_name}}</li>
+    <tr>
+        <td>{{member.first_name}}</td>
+        <td>{{member.last_name}}</td>
+        <td>
+            <button class="show_page_button" id="show_page_view_button">
+                <a class="show_page_link" href="/members/{{member.id}}">View Member Details</a>
+            </button>
+        </td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 
-<button>
-    <a href="/bookings/create">Add New Booking</a>
+<button class="show_page_button" id="show_page_bottom_button">
+    <a class="show_page_link" href="/bookings/create">Add New Booking</a>
 </button>
 
 

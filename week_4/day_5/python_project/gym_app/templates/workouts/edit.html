@@ -1,28 +1,50 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<div class="edit_page_container">
+
 <h1>update workout</h1>
 
-<form action="/workouts/{{workout.id}}" method="post">
+<form class="edit_form" action="/workouts/{{workout.id}}" method="post">
+    <table class="edit_table">
+    <tr>
+        <td>
+            <label class="edit_form_label" for="name">Name</label>
+        </td>
+        <td>
+            <input class="edit_form_input" type="text" id="name" name="name" value={{workout.name}} placeholder={{workout.name}} required autofocus>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="edit_form_label" for="date">Date</label>
+        </td>
+        <td>
+            <input class="edit_form_input" type="date" id="date" name="date" value={{workout.date}} placeholder={{workout.date}} required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="edit_form_label" for="description">Description</label>
+        </td>
+        <td>
+            <input class="edit_form_input" type="text" id="description" name="description" value={{workout.description}} placeholder={{workout.description}} required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="edit_form_label" for="duration">Duration</label>
+        </td>
+        <td>
+            <input class="edit_form_input" type="int" id="duration" name="duration" value={{workout.duration}} placeholder={{workout.duration}} required>
+        </td>
+    </tr>
+    </table>
     <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" value={{workout.name}} placeholder={{workout.name}} required autofocus>
-    </div>
-    <div>
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date" value={{workout.date}} placeholder={{workout.date}} required>
-    </div>
-    <div>
-        <label for="description">Description</label>
-        <input type="text" id="description" name="description" value={{workout.description}} placeholder={{workout.description}} required>
-    </div>
-    <div>
-        <label for="duration">Duration</label>
-        <input type="int" id="duration" name="duration" value={{workout.duration}} placeholder={{workout.duration}} required>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
+        <button class="edit_page_button" type="submit">Submit</button>
     </div>
 </form>
+
+</div>
 
 {% endblock %}

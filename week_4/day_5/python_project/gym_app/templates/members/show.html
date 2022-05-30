@@ -1,30 +1,44 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div>
-    <b>Name: </b>{{member.first_name}} {{member.last_name}}
-</div>
-<div>
-    <b>Date of Birth: </b>{{member.dob}}
-</div>
-<button>
-    <a href="/members/{{member.id}}/update">Update Details</a>
-</button>
+<div class="show_page_container">
 
-<h3>Bookings:</h3>
-<ul>
+<h1>view member</h1>
+
+<div class="show_page_top_details">
+    <div><b>Name: </b>{{member.first_name}} {{member.last_name}}</div>
+    <div><b>Date of Birth: </b>{{member.dob}}</div>
+</div>
+
+<div id="show_page_top_buttons">
+    <button class="show_page_button"><a class="show_page_link" href="/members/{{member.id}}/update">Update Details</a></button>
+    <form action="/members/{{member.id}}/delete" method="POST"><button class="show_page_button">Delete Member</button></form>
+</div>
+
+<h3 class="bookings_header">Bookings:</h3>
+<table class="show_page_table">
+    <tr class="show_page_table_headers">
+        <th>Workout</th>
+        <th>Date</th>
+        <th>View</th>
+    </tr>
     {% for workout in workouts %}
-    <li><b>Name: </b><a href="/workouts/{{workout.id}}">{{workout.name}}</a></li>
-    <li><b>Date: </b>{{workout.date}}</li>
+    <tr class="show_page_table_content">
+        <td>{{workout.name}}</td>
+        <td>{{workout.date}}</td>
+        <td>
+            <button class="show_page_button" id="show_page_view_button">
+                <a class="show_page_link" href="/workouts/{{workout.id}}">View Workout Details</a>
+            </button>
+        </td>
+    </tr>
     {% endfor %}
-</ul>
+</table>
 
-<button>
-    <a href="/bookings/create">Add New Booking</a>
+<button class="show_page_button" id="show_page_bottom_button">
+    <a class="show_page_link" href="/bookings/create">Add New Booking</a>
 </button>
 
-<form action="/members/{{member.id}}/delete" method="POST">
-    <button>Delete Member</button>
-</form>
+</div>
 
 {% endblock %}
