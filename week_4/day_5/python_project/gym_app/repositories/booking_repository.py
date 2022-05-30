@@ -13,6 +13,15 @@ def save(booking):
 
     return booking
 
+def select(id):
+    booking = None
+    sql = "SELECT * FROM bookings where id = ?"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        booking = Booking(result['member_id'], result['workout_id'], result['id'])
+    return booking
 
 def select_all():
     bookings = []
@@ -32,7 +41,19 @@ def delete_all():
     run_sql(sql)
 
 
+def get_workout(id):
+    booking = select(id)
+    workout = workout_repository.select(booking.workout)
+    return workout
+
+
 def delete(id):
+    workout = get_workout(id)
+    workout_repository.reduce_capacity_filled(workout)
+
     sql = "DELETE FROM bookings WHERE id = ?"
     values = [id]
     run_sql(sql, values)
+
+
+

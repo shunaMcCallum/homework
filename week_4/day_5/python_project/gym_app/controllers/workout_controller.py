@@ -16,8 +16,8 @@ def workouts():
 def workout_show(id):
     route_name = "workouts"
     workout = workout_repository.select(id)
-    members = workout_repository.get_members(workout)
-    return render_template("workouts/show.html", route_name=route_name, workout=workout, members=members)
+    bookings = workout_repository.get_bookings(workout)
+    return render_template("workouts/show.html", route_name=route_name, workout=workout, bookings=bookings)
 
 # ADD NEW WORKOUT
 @workouts_blueprint.route("/workouts/create")

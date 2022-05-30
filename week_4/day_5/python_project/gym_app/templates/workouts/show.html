@@ -25,15 +25,21 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>View</th>
+        <th>Delete</th>
     </tr>
-    {% for member in members %}
+    {% for booking in bookings %}
     <tr>
-        <td>{{member.first_name}}</td>
-        <td>{{member.last_name}}</td>
+        <td>{{booking.member.first_name}}</td>
+        <td>{{booking.member.last_name}}</td>
         <td>
             <button class="show_page_button" id="show_page_view_button">
-                <a class="show_page_link" href="/members/{{member.id}}">View Member Details</a>
+                <a class="show_page_link" href="/members/{{booking.member.id}}">View Member Details</a>
             </button>
+        </td>
+        <td>
+            <form action="/bookings/workout/{{booking.id}}/delete" method="POST">
+                <button class="show_page_button">Delete Booking</button>
+            </form>
         </td>
     </tr>
     {% endfor %}

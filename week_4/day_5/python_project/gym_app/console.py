@@ -30,6 +30,7 @@ booking3 = Booking (member1, workout2)
 booking_repository.save(booking3)
 booking4 = Booking(member2, workout1)
 booking_repository.save(booking4)
+booking5 = Booking(member1, workout1)
 
 # Testing members save and select
 # members = member_repository.select_all()
@@ -57,11 +58,25 @@ booking_repository.save(booking4)
 #     print(workout.__dict__)
 
 # Testing workout capacities update and print
-workout = workout_repository.select(1)
-print(workout.__dict__)
+# workout = workout_repository.select(1)
+# print(workout.__dict__)
 
-workout2 = workout_repository.select(2)
-print(workout2.__dict__)
+# workout2 = workout_repository.select(2)
+# print(workout2.__dict__)
+
+# Testing deleting workouts and reducing capacity filled
+# booking = booking_repository.select(1)
+# print(booking.__dict__)
+
+# workout = workout_repository.select(1)
+# booking_repository.save(booking5)
+# print(workout.__dict__)
+
+# booking_repository.delete(1)
+# print(workout.__dict__)
+
+# workout = booking_repository.get_workout(2)
+# print(workout.__dict__)
 
 # Testing workouts delete
 # workout_repository.delete(5)
@@ -96,6 +111,10 @@ print(workout2.__dict__)
 # for member in workout_members:
 #     print(member.__dict__)
 
+# Testing select one workout's bookings
+bookings = workout_repository.get_bookings(workout1)
+for booking in bookings:
+    print(booking.member.first_name)
 
 
 pdb.set_trace()

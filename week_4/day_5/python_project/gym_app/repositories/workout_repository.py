@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 from models.workout import Workout
 from models.member import Member
+from models.booking import Booking
+import repositories.member_repository as member_repository
 
 def save(workout):
     sql = "INSERT INTO workouts (name, date, description, duration, capacity) VALUES (?, ?, ?, ?, ?) RETURNING id"
@@ -64,6 +66,20 @@ def get_members(workout):
         members.append(member)
     return members
 
+def get_bookings(workout):
+    bookings = []
+
+    sql = "SELECT * from bookings WHERE workout_id = ?"
+    values = [workout.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        workout1 = select(row['workout_id'])
+        booking = Booking(member, workout1, row['id'])
+        bookings.append(booking)
+    return bookings
+
 def update_capacity_filled(workout):
     workout.capacity_filled += 1
 
@@ -71,4 +87,9 @@ def update_capacity_filled(workout):
     values = [workout.capacity_filled, workout.id]
     run_sql(sql, values)
 
+def reduce_capacity_filled(workout):
+    workout.capacity_filled -= 1
 
+    sql = "UPDATE workouts SET (capacity_filled) = (?) WHERE id = ?"
+    values = [workout.capacity_filled, workout.id]
+    run_sql(sql, values)
