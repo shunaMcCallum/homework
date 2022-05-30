@@ -3,15 +3,6 @@ from models.booking import Booking
 import repositories.member_repository as member_repository
 import repositories.workout_repository as workout_repository
 
-def save(booking):
-    sql = "INSERT INTO bookings (member_id, workout_id) VALUES (?, ?) RETURNING id"
-    values = [booking.member.id, booking.workout.id]
-    results = run_sql(sql, values)
-    booking.id = results[0]['id']
-
-    workout_repository.update_capacity_filled(booking.workout)
-
-    return booking
 
 def select(id):
     booking = None
@@ -22,6 +13,7 @@ def select(id):
     if result is not None:
         booking = Booking(result['member_id'], result['workout_id'], result['id'])
     return booking
+
 
 def select_all():
     bookings = []
@@ -36,15 +28,41 @@ def select_all():
     return bookings
 
 
-def delete_all():
-    sql = "DELETE FROM bookings"
-    run_sql(sql)
-
-
 def get_workout(id):
     booking = select(id)
     workout = workout_repository.select(booking.workout)
     return workout
+
+def save(booking):
+
+    sql = "INSERT INTO bookings (member_id, workout_id) VALUES (?, ?) RETURNING id"
+    values = [booking.member.id, booking.workout.id]
+    results = run_sql(sql, values)
+    booking.id = results[0]['id']
+
+    workout_repository.update_capacity_filled(booking.workout)
+
+    return booking
+
+def save_with_check(booking):
+    workout = workout_repository.select(booking.workout.id)
+
+    if workout.capacity_filled >= workout.capacity:
+        return None
+    else:
+        sql = "INSERT INTO bookings (member_id, workout_id) VALUES (?, ?) RETURNING id"
+        values = [booking.member.id, booking.workout.id]
+        results = run_sql(sql, values)
+        booking.id = results[0]['id']
+
+        workout_repository.update_capacity_filled(booking.workout)
+
+        return booking
+
+
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
 
 
 def delete(id):

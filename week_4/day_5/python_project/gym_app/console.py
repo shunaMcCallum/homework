@@ -17,9 +17,9 @@ member_repository.save(member1)
 member2 = Member("Niles", "Crane", datetime.datetime(1963, 7, 7))
 member_repository.save(member2)
 
-workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60, 12)
+workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60, 10)
 workout_repository.save(workout1)
-workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45, 20)
+workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45, 2)
 workout_repository.save(workout2)
 
 booking1 = Booking(member1, workout1)
@@ -30,7 +30,25 @@ booking3 = Booking (member1, workout2)
 booking_repository.save(booking3)
 booking4 = Booking(member2, workout1)
 booking_repository.save(booking4)
-booking5 = Booking(member1, workout1)
+
+# Testing saving workouts with capacity check
+# workout = booking_repository.check_save_workout(booking2)
+# print(workout)
+
+# bookings = booking_repository.select_all()
+# for booking in bookings:
+#     print(booking.__dict__)
+
+# booking5 = Booking (member1, workout2)
+# booking_repository.save_with_check(booking5)
+
+
+# booking5 = Booking (member1, workout2)
+# booking_repository.save_with_check(booking5)
+
+# bookings = booking_repository.select_all()
+# for booking in bookings:
+#     print(booking.__dict__)
 
 # Testing members save and select
 # members = member_repository.select_all()
@@ -112,9 +130,9 @@ booking5 = Booking(member1, workout1)
 #     print(member.__dict__)
 
 # Testing select one workout's bookings
-bookings = workout_repository.get_bookings(workout1)
-for booking in bookings:
-    print(booking.member.first_name)
+# bookings = workout_repository.get_bookings(workout1)
+# for booking in bookings:
+#     print(booking.member.first_name)
 
 
 pdb.set_trace()

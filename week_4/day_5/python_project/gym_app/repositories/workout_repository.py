@@ -5,8 +5,8 @@ from models.booking import Booking
 import repositories.member_repository as member_repository
 
 def save(workout):
-    sql = "INSERT INTO workouts (name, date, description, duration, capacity) VALUES (?, ?, ?, ?, ?) RETURNING id"
-    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity]
+    sql = "INSERT INTO workouts (name, date, description, duration, capacity, capacity_filled) VALUES (?, ?, ?, ?, ?, ?) RETURNING id"
+    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled]
     results = run_sql(sql, values)
     workout.id = results[0]['id']
     return workout

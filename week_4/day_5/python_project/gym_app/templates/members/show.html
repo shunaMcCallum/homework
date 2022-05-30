@@ -21,15 +21,21 @@
         <th>Workout</th>
         <th>Date</th>
         <th>View</th>
+        <th>Delete</th>
     </tr>
-    {% for workout in workouts %}
+    {% for booking in bookings %}
     <tr class="show_page_table_content">
-        <td>{{workout.name}}</td>
-        <td>{{workout.date}}</td>
+        <td>{{booking.workout.name}}</td>
+        <td>{{booking.workout.date}}</td>
         <td>
             <button class="show_page_button" id="show_page_view_button">
-                <a class="show_page_link" href="/workouts/{{workout.id}}">View Workout Details</a>
+                <a class="show_page_link" href="/workouts/{{booking.workout.id}}">View Workout Details</a>
             </button>
+        </td>
+        <td>
+            <form action="/bookings/member/{{booking.id}}/delete" method="POST">
+                <button class="show_page_button">Delete Booking</button>
+            </form>
         </td>
     </tr>
     {% endfor %}

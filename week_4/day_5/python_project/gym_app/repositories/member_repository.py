@@ -1,8 +1,11 @@
 from db.run_sql import run_sql
 from models.member import Member
 from models.workout import Workout
+from models.booking import Booking
+import repositories.workout_repository as workout_repository
 
 def save(member):
+    
     sql = "INSERT INTO members(first_name, last_name, dob) VALUES (?, ?, ?) RETURNING id"
     values = [member.first_name, member.last_name, member.dob]
     results = run_sql(sql, values)
@@ -64,4 +67,17 @@ def get_workouts(member):
         workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['id'])
         workouts.append(workout)
     return workouts
+
+def get_bookings_member(member):
+    bookings = []
     
+    sql = "SELECT * from bookings WHERE member_id = ?"
+    values = [member.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member1 = select(row['member_id'])
+        workout = workout_repository.select(row['workout_id'])
+        booking = Booking(member1, workout, row['id'])
+        bookings.append(booking)
+    return bookings

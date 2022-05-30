@@ -16,8 +16,8 @@ def members():
 def member_show(id):
     route_name = "members"
     member = member_repository.select(id)
-    workouts = member_repository.get_workouts(member)
-    return render_template("members/show.html", route_name=route_name, member=member, workouts=workouts)
+    bookings = member_repository.get_bookings_member(member)
+    return render_template("members/show.html", route_name=route_name, member=member, bookings=bookings)
 
 # ADD NEW MEMBER
 @members_blueprint.route("/members/create")
@@ -28,7 +28,6 @@ def add_member():
 # CREATE MEMBER
 @members_blueprint.route("/members", methods=['POST'])
 def create_member():
-    route_name = "members"
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     dob = request.form['dob']
@@ -54,8 +53,10 @@ def update_member(id):
 
     member = Member(first_name, last_name, dob, id)
     member_repository.update(member)
-    workouts = member_repository.get_workouts(member)
-    return render_template("members/show.html", route_name=route_name, member=member, workouts=workouts)
+
+    this_member = member_repository.select(id)
+    bookings = member_repository.get_bookings_member(this_member)
+    return render_template("members/show.html", route_name=route_name, member=member, bookings=bookings)
 
 # DELETE MEMBER
 @members_blueprint.route("/members/<id>/delete", methods=['POST'])
