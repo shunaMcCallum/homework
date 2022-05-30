@@ -36,7 +36,15 @@
             <label class="edit_form_label" for="duration">Duration</label>
         </td>
         <td>
-            <input class="edit_form_input" type="int" id="duration" name="duration" value={{workout.duration}} placeholder={{workout.duration}} required>
+            <input class="edit_form_input" type="number" id="duration" name="duration" value={{workout.duration}} placeholder={{workout.duration}} required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="edit_form_label" for="capacity">Capacity</label>
+        </td>
+        <td>
+            <input class="edit_form_input" type="number" id="capacity" name="capacity" value={{workout.capacity}} placeholder={{workout.capacity}} required>
         </td>
     </tr>
     </table>

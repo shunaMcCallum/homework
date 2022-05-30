@@ -61,7 +61,7 @@ def get_workouts(member):
     results = run_sql(sql, values)
 
     for row in results:
-        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['id'])
+        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['id'])
         workouts.append(workout)
     return workouts
     

@@ -16,7 +16,9 @@ CREATE TABLE workouts (
     name VARCHAR,
     date DATE,
     description TEXT,
-    duration INTEGER
+    duration INTEGER,
+    capacity INTEGER,
+    capacity_filled INTEGER
 );
 
 CREATE TABLE bookings (

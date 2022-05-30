@@ -17,9 +17,9 @@ member_repository.save(member1)
 member2 = Member("Niles", "Crane", datetime.datetime(1963, 7, 7))
 member_repository.save(member2)
 
-workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60)
+workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60, 12)
 workout_repository.save(workout1)
-workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45)
+workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45, 20)
 workout_repository.save(workout2)
 
 booking1 = Booking(member1, workout1)
@@ -56,6 +56,13 @@ booking_repository.save(booking4)
 # for workout in workouts:
 #     print(workout.__dict__)
 
+# Testing workout capacities update and print
+workout = workout_repository.select(1)
+print(workout.__dict__)
+
+workout2 = workout_repository.select(2)
+print(workout2.__dict__)
+
 # Testing workouts delete
 # workout_repository.delete(5)
 
@@ -88,5 +95,7 @@ booking_repository.save(booking4)
 # workout_members = workout_repository.get_members(workout1)
 # for member in workout_members:
 #     print(member.__dict__)
+
+
 
 pdb.set_trace()

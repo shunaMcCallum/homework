@@ -8,6 +8,9 @@ def save(booking):
     values = [booking.member.id, booking.workout.id]
     results = run_sql(sql, values)
     booking.id = results[0]['id']
+
+    workout_repository.update_capacity_filled(booking.workout)
+
     return booking
 
 

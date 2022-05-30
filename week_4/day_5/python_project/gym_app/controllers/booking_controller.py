@@ -21,10 +21,25 @@ def add_booking():
     workouts = workout_repository.select_all()
     return render_template("bookings/create.html", route_name=route_name, members=members, workouts=workouts)
 
+# ADD NEW BOOKING FROM MEMBER PAGE
+@bookings_blueprint.route("/bookings/create/member/<id>")
+def add_booking_for_member(id):
+    route_name = "bookings"
+    member = member_repository.select(id)
+    workouts = workout_repository.select_all()
+    return render_template("bookings/create_member.html", route_name=route_name, workouts=workouts, member=member)
+
+# ADD NEW BOOKING FROM WORKOUT PAGE
+@bookings_blueprint.route("/bookings/create/workout/<id>")
+def add_booking_for_workout(id):
+    route_name = "bookings"
+    members = member_repository.select_all()
+    workout = workout_repository.select(id)
+    return render_template("bookings/create_workout.html", route_name=route_name, workout=workout, members=members)
+
 # CREATE BOOKING
 @bookings_blueprint.route("/bookings", methods=['POST'])
 def create_booking():
-    route_name = "bookings"
     member_id = request.form['member_id']
     workout_id = request.form['workout_id']
 
@@ -35,9 +50,42 @@ def create_booking():
     booking_repository.save(booking)
     return redirect("/bookings")
 
+# CREATE BOOKING FOR MEMBER RETURN TO MEMBER PAGE
+@bookings_blueprint.route("/bookings/member/<id>", methods=['POST'])
+def create_booking_for_member(id):
+    route_name = "members"
+
+    member_id = request.form['member_id']
+    workout_id = request.form['workout_id']
+    member = member_repository.select(member_id)
+    workout = workout_repository.select(workout_id)
+    booking = Booking(member, workout)
+    booking_repository.save(booking)
+
+    member = member_repository.select(id)
+    workouts = member_repository.get_workouts(member)
+
+    return render_template("members/show.html", route_name=route_name, workouts=workouts, member=member)
+
+# CREATE BOOKING FOR WORKOUT RETURN TO WORKOUT PAGE
+@bookings_blueprint.route("/bookings/workout/<id>", methods=['POST'])
+def create_booking_for_workout(id):
+    route_name = "workouts"
+
+    member_id = request.form['member_id']
+    workout_id = request.form['workout_id']
+    member = member_repository.select(member_id)
+    workout = workout_repository.select(workout_id)
+    booking = Booking(member, workout)
+    booking_repository.save(booking)
+
+    members = workout_repository.get_members(workout)
+    workout = workout_repository.select(id)
+
+    return render_template("workouts/show.html", route_name=route_name, workout=workout, members=members)
+
 # DELETE BOOKING
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
 def delete_booking(id):
-    route_name = "bookings"
     booking_repository.delete(id)
     return redirect("/bookings")

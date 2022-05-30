@@ -10,6 +10,8 @@
     <div><b>Date: </b> {{workout.date}}</div>
     <div><b>Description: </b> {{workout.description}}</div>
     <div><b>Duration: </b> {{workout.duration}} mins</div>
+    <div><b>Capacity: </b> {{workout.capacity}}</div>
+    <div><b>Capacity Filled: </b> {{workout.capacity_filled}}</div>
 </div>
 
 <div id="show_page_top_buttons">
@@ -38,7 +40,7 @@
 </table>
 
 <button class="show_page_button" id="show_page_bottom_button">
-    <a class="show_page_link" href="/bookings/create">Add New Booking</a>
+    <a class="show_page_link" href="/bookings/create/workout/{{workout.id}}">Add New Booking</a>
 </button>
 
 

@@ -28,13 +28,13 @@ def create_workout():
 # CREATE WORKOUT
 @workouts_blueprint.route("/workouts", methods=['POST'])
 def add_workout():
-    route_name = "workouts"
     name = request.form['name']
     date = request.form['date']
     description = request.form['description']
     duration = request.form['duration']
+    capacity = request.form['capacity']
 
-    workout = Workout(name, date, description, duration)
+    workout = Workout(name, date, description, duration, capacity)
     workout_repository.save(workout)
     return redirect("/workouts")
 
@@ -53,8 +53,9 @@ def update_workout(id):
     date = request.form['date']
     description = request.form['description']
     duration = request.form['duration']
+    capacity = request.form['capacity']
 
-    workout = Workout(name, date, description, duration, id)
+    workout = Workout(name, date, description, duration, capacity, id)
     workout_repository.update(workout)
     members = workout_repository.get_members(workout)
     return render_template("workouts/show.html", route_name=route_name, workout=workout, members=members)
