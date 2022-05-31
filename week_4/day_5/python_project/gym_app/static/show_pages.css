@@ -21,7 +21,7 @@
 }
 
 #show_page_table_headers_workouts {
-    background-color: #029100;
+    background-color: #c12214;
 }
 
 .show_page_table_headers>th {
@@ -40,10 +40,6 @@
     transform: translateX(1.5px) translateY(1.5px);
 }
 
-#delete_button:active {
-    transform: translateX(1.5px) translateY(1.5px);
-}
-
 .show_page_button {
     padding: 7px;
     border-radius: 8px;
@@ -56,6 +52,10 @@
 
 #show_page_view_button:active {
     transform: translateX(1.5px) translateY(1.5px);
+}
+
+#show_page_delete_button {
+    border: none;
 }
 
 #show_page_delete_button:active {

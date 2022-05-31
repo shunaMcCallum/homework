@@ -22,7 +22,7 @@
 
 <h3 class="bookings_header">Bookings:</h3>
 <table class="show_page_table">
-    <tr class="show_page_table_headers">
+    <tr class="show_page_table_headers" id="show_page_table_headers_members">
         <th>Workout</th>
         <th>Date</th>
         <th>View</th>
@@ -37,9 +37,9 @@
                 <a class="show_page_link" href="/workouts/{{booking.workout.id}}">View Workout Details</a>
             </button>
         </td>
-        <td>
+        <td class="delete_column">
             <form action="/bookings/member/{{booking.id}}/delete" method="POST">
-                <button class="show_page_button" id="show_page_delete_button">Delete Booking</button>
+                <button class="show_page_button" id="show_page_delete_button"><i class="fa-solid fa-trash-can" style="color: red"></i></button>
             </form>
         </td>
     </tr>

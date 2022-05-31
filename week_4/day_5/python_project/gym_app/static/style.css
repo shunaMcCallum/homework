@@ -17,13 +17,13 @@ body {
     text-align: center;
 }
 
-.base > header {
+.base>header {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.base > header > p {
+.base>header>p {
     align-self: flex-end;
     margin-bottom: 74px;
 }
@@ -47,7 +47,7 @@ body {
     transform: translateX(1.5px) translateY(1.5px);
 }
 
-.nav_item > a {
+.nav_item>a {
     color: white;
     text-align: center;
     text-decoration: none;
@@ -96,7 +96,7 @@ body {
     margin: 40px auto;
 }
 
-.page_container > h3 {
+.page_container>h3 {
     margin-top: 0px;
 }
 
