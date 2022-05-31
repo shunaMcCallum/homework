@@ -8,7 +8,11 @@
 <div class="show_page_top_details">
     <div><b>Name: </b>{{member.first_name}} {{member.last_name}}</div>
     <div><b>Date of Birth: </b>{{member.dob}}</div>
-    <div><b>Active: </b>{{member.active}}</div>
+    {% if member.active == True %}
+    <div><b>Active: </b><i class="fa-solid fa-check" style="color: green"></i></div>
+    {% elif member.active == False %}
+    <div><b>Active: </b><i class="fa-solid fa-xmark" style="color: red"></i></div>
+    {% endif %}
 </div>
 
 <div id="show_page_top_buttons">

@@ -46,7 +46,6 @@ def edit_member(id):
 # UPDATE MEMBER
 @members_blueprint.route("/members/<id>", methods=['POST'])
 def update_member(id):
-    route_name = "members"
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     dob = request.form['dob']
@@ -60,14 +59,10 @@ def update_member(id):
     member = Member(first_name, last_name, dob, active, id)
     member_repository.update(member)
 
-    this_member = member_repository.select(id)
-    bookings = member_repository.get_bookings_member(this_member)
-    return redirect("/members")
-    # return render_template("members/show.html", route_name=route_name, member=member, bookings=bookings)
+    return redirect(f"/members/{member.id}")
 
 # DELETE MEMBER
 @members_blueprint.route("/members/<id>/delete", methods=['POST'])
 def delete_member(id):
-    route_name = "members"
     member_repository.delete(id)
     return redirect("/members")

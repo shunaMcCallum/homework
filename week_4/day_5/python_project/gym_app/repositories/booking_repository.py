@@ -33,6 +33,12 @@ def get_workout(id):
     workout = workout_repository.select(booking.workout)
     return workout
 
+def get_member(id):
+    booking = select(id)
+    member = member_repository.select(booking.member)
+    return member
+
+
 def save(booking):
 
     sql = "INSERT INTO bookings (member_id, workout_id) VALUES (?, ?) RETURNING id"

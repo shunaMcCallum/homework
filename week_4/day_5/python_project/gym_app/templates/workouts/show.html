@@ -12,7 +12,11 @@
     <div><b>Duration: </b> {{workout.duration}} mins</div>
     <div><b>Capacity: </b> {{workout.capacity}}</div>
     <div><b>Capacity Filled: </b> {{workout.capacity_filled}}</div>
-    <div><b>Active: </b>{{workout.active}}</div>
+    {% if workout.active == True %}
+    <div><b>Active: </b><i class="fa-solid fa-check" style="color: green"></i></div>
+    {% elif workout.active == False %}
+    <div><b>Active: </b><i class="fa-solid fa-xmark" style="color: red"></i></div>
+    {% endif %}
 </div>
 
 <div id="show_page_top_buttons">

@@ -22,7 +22,11 @@
             <td>{{member.first_name}}</td>
             <td>{{member.last_name}}</td>
             <td>{{member.id}}</td>
-            <td>{{member.active}}</td>
+            {% if member.active == True %}
+            <td><i class="fa-solid fa-check" style="color: green"></i></td>
+            {% elif member.active == False %}
+            <td><i class="fa-solid fa-xmark" style="color: red"></i></td>
+            {% endif %}
             <td><button class="index_page_button"><a class="index_page_link" href="/members/{{member.id}}">View Details</button></td>
         {% endfor %}
         </tr>

@@ -8,28 +8,33 @@ import repositories.member_repository as member_repository
 import repositories.workout_repository as workout_repository
 import repositories.booking_repository as booking_repository
 
-booking_repository.delete_all()
-member_repository.delete_all()
-workout_repository.delete_all()
+# booking_repository.delete_all()
+# member_repository.delete_all()
+# workout_repository.delete_all()
 
-member1 = Member("Frasier", "Crane", datetime.datetime(1960, 10, 10))
-member_repository.save(member1)
-member2 = Member("Niles", "Crane", datetime.datetime(1963, 7, 7))
-member_repository.save(member2)
+# member1 = Member("Frasier", "Crane", datetime.datetime(1960, 10, 10))
+# member_repository.save(member1)
+# member2 = Member("Niles", "Crane", datetime.datetime(1963, 7, 7))
+# member_repository.save(member2)
 
-workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60, 10)
-workout_repository.save(workout1)
-workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45, 2)
-workout_repository.save(workout2)
+# workout1 = Workout("Spin Class", datetime.datetime(2022, 6, 6), "Spin class", 60, 10)
+# workout_repository.save(workout1)
+# workout2 = Workout("Boxing Class", datetime.date(2022, 9, 6), "Boxing class", 45, 2)
+# workout_repository.save(workout2)
 
-booking1 = Booking(member1, workout1)
-booking_repository.save(booking1)
-booking2 = Booking(member2, workout2)
-booking_repository.save(booking2)
-booking3 = Booking (member1, workout2)
-booking_repository.save(booking3)
-booking4 = Booking(member2, workout1)
-booking_repository.save(booking4)
+# booking1 = Booking(member1, workout1)
+# booking_repository.save(booking1)
+# booking2 = Booking(member2, workout2)
+# booking_repository.save(booking2)
+# booking3 = Booking (member1, workout2)
+# booking_repository.save(booking3)
+# booking4 = Booking(member2, workout1)
+# booking_repository.save(booking4)
+
+# Testing issue - workout name and description lost when updating
+# workouts = workout_repository.select_all()
+# for workout in workouts:
+#     print(workout.__dict__)
 
 # Testing issue with updating member information
 # member1.active = False

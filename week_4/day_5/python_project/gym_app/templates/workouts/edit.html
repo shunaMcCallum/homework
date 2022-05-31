@@ -12,7 +12,7 @@
             <label class="edit_form_label" for="name">Name</label>
         </td>
         <td>
-            <input class="edit_form_input" type="text" id="name" name="name" value={{workout.name}} placeholder={{workout.name}} required autofocus>
+            <input class="edit_form_input" type="text" id="name" name="name" value="{{workout.name}}" placeholder={{workout.name}} required autofocus>
         </td>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
             <label class="edit_form_label" for="description">Description</label>
         </td>
         <td>
-            <input class="edit_form_input" type="text" id="description" name="description" value={{workout.description}} placeholder={{workout.description}} required>
+            <input class="edit_form_input" type="text" id="description" name="description" value="{{workout.description}}" placeholder={{workout.description}} required>
         </td>
     </tr>
     <tr>
@@ -59,14 +59,14 @@
             {% if workout.active == 1 %}
             <td>
                 <select class="edit_form_input" id="active" name="active">
-                    <option value="workout.active">{{workout.active}}</option>
+                    <option value={{workout.active}}>{{workout.active}}</option>
                     <option value=False>False</option>
                 </select>
             </td>
             {% elif workout.active == 0 %}
             <td>
                 <select class="edit_form_input" id="active" name="active">
-                    <option value="workout.active">{{workout.active}}</option>
+                    <option value={{workout.active}}>{{workout.active}}</option>
                     <option value=True>True</option>
                 </select>
             </td>

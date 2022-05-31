@@ -48,7 +48,6 @@ def edit_workout(id):
 # UPDATE WORKOUT
 @workouts_blueprint.route("/workouts/<id>", methods=['POST'])
 def update_workout(id):
-    route_name = "workouts"
     name = request.form['name']
     date = request.form['date']
     description = request.form['description']
@@ -65,14 +64,10 @@ def update_workout(id):
     workout = Workout(name, date, description, duration, capacity, capacity_filled, active, id)
     workout_repository.update(workout)
 
-    this_workout = workout_repository.select(id)
-    bookings = workout_repository.get_bookings(this_workout)
-    return redirect("/workouts")
-    # return render_template("workouts/show.html", route_name=route_name, workout=workout, bookings=bookings)
+    return redirect(f"/workouts/{workout.id}")
 
 # DELETE WORKOUT
 @workouts_blueprint.route("/workouts/<id>/delete", methods=['POST'])
 def delete_workout(id):
-    route_name = "workouts"
     workout_repository.delete(id)
     return redirect("/workouts")

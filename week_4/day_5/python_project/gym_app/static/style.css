@@ -18,6 +18,17 @@ body {
     text-align: center;
 }
 
+.base > header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base > header > p {
+    align-self: flex-end;
+    margin-bottom: 74px;
+}
+
 .nav_bar {
     list-style-type: none;
     margin: 0;
@@ -32,6 +43,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: white;
+    border-radius: 8px;
 }
 
 #nav_home {
@@ -77,20 +89,7 @@ body {
 }
 
 .home_list {
-    margin: auto 5px;
+    margin: 0px 5px;
     text-align: center;
     padding: 10px;
-    font-weight: bold;
-}
-
-#home_list_1 {
-    color: #69add5
-}
-
-#home_list_2 {
-    color: #ee4646
-}
-
-#home_list_3 {
-    color: #2ea52e;
 }

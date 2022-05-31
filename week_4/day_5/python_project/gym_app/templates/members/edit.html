@@ -40,14 +40,14 @@
                 {% if member.active == True %}
                 <td>
                     <select class="edit_form_input" id="active" name="active">
-                        <option value="member.active">{{member.active}}</option>
+                        <option value={{member.active}}>{{member.active}}</option>
                         <option value=False>False</option>
                     </select>
                 </td>
                 {% elif member.active == False %}
                 <td>
                     <select class="edit_form_input" id="active" name="active">
-                        <option value="member.active">{{member.active}}</option>
+                        <option value={{member.active}}>{{member.active}}</option>
                         <option value=True>True</option>
                     </select>
                 </td>

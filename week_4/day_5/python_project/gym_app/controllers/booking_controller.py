@@ -67,6 +67,7 @@ def create_booking_for_member(id):
 
     return render_template("members/show.html", route_name=route_name, bookings=bookings, member=member)
 
+
 # CREATE BOOKING FOR WORKOUT RETURN TO WORKOUT PAGE
 @bookings_blueprint.route("/bookings/workout/<id>", methods=['POST'])
 def create_booking_for_workout(id):
@@ -93,13 +94,15 @@ def delete_booking(id):
 # DELETE BOOKING FROM MEMBER PAGE
 @bookings_blueprint.route("/bookings/member/<id>/delete", methods=['POST'])
 def delete_booking_member_page(id):
+    member = booking_repository.get_member(id)
     booking_repository.delete(id)
-
-    return redirect("/members")
+    
+    return redirect(f"/members/{member.id}")
 
 # DELETE BOOKING FROM WORKOUT PAGE
 @bookings_blueprint.route("/bookings/workout/<id>/delete", methods=['POST'])
 def delete_booking_workout_page(id):
+    workout = booking_repository.get_workout(id)
     booking_repository.delete(id)
 
-    return redirect("/workouts")
+    return redirect(f"/workouts/{workout.id}")
