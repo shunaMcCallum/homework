@@ -56,36 +56,36 @@ body {
 }
 
 #nav_home {
-    background-color: #454545;
+    background-color: #3e3d3d;
 }
 
 #nav_home:hover {
-    background-color: #7b7b7b;
+    background-color: #797979;
 }
 
 #nav_member {
-    background-color: #69add5;
+    background-color: #1c6eb6;
 }
 
 #nav_member:hover {
-    background-color: #426c85;
+    background-color: #7daffe;
     padding: 22px;
 }
 
 #nav_workout {
-    background-color: #ee4646;
+    background-color: #c12214;
 }
 
 #nav_workout:hover {
-    background-color: #a92d2d;
+    background-color: #ff7a7a;
 }
 
 #nav_booking {
-    background-color: #2ea52e;
+    background-color: #029100;
 }
 
 #nav_booking:hover {
-    background-color: #227922;
+    background-color: #71e771;
 }
 
 /* HOMEPAGE CSS */
@@ -117,13 +117,13 @@ body {
 }
 
 #home_list_1 {
-    color: #69add5;
+    color: #1c6eb6;
 }
 
 #home_list_2 {
-    color: #ee4646;
+    color: #c12214;
 }
 
 #home_list_3 {
-    color: #2ea52e;
+    color: #029100;
 }

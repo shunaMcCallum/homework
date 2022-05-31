@@ -16,16 +16,16 @@
 }
 
 .index_table_headers {
-    background-color: #69add5;
+    background-color: #1c6eb6;
     color: white;
 }
 
 #index_table_headers_workouts {
-    background-color: #ee4646;
+    background-color: #c12214;
 }
 
 #index_table_headers_bookings {
-    background-color: #2ea52e;
+    background-color: #029100;
 }
 
 .index_table_headers > th {
@@ -40,12 +40,19 @@
     background-color: #f2f2f2;
 }
 
+.active_column {
+    text-align: center;
+}
+
+.delete_column {
+    text-align: center;
+}
+
 .index_page_button {
     padding: 7px;
     border-radius: 8px;
     border-width: 1px;
 }
-
 
 .index_page_button:hover {
     background-color: #aeaeae;

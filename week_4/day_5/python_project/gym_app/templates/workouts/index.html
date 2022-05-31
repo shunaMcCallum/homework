@@ -25,11 +25,11 @@
             <td>{{workout.duration}} mins</td>
             <td>{{workout.capacity_filled}} / {{workout.capacity}}</td>
             {% if workout.active == True %}
-            <td><i class="fa-solid fa-check" style="color: green"></i></td>
+            <td class="active_column"><i class="fa-solid fa-check" style="color: green"></i></td>
             {% elif workout.active == False %}
-            <td><i class="fa-solid fa-xmark" style="color: red"></i></td>
+            <td class="active_column"><i class="fa-solid fa-xmark" style="color: red"></i></td>
             {% endif %}
-            <td><button class="index_page_button" id="view_details_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
+            <td class="delete_column"><button class="index_page_button" id="view_details_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
         {% endfor %}
         </tr>
     </table>
