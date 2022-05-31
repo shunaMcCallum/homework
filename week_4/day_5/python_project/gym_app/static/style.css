@@ -1,9 +1,8 @@
 /* BASE FILE CSS */
-
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 100%;
     width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .page_headers {
@@ -116,7 +115,7 @@ body {
     font-weight: bold;
 }
 
-#home_list_1 {
+/* #home_list_1 {
     color: #1c6eb6;
 }
 
@@ -126,4 +125,4 @@ body {
 
 #home_list_3 {
     color: #029100;
-}
+} */
