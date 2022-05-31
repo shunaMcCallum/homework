@@ -50,8 +50,9 @@ def update_member(id):
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     dob = request.form['dob']
+    active = request.form['active']
 
-    member = Member(first_name, last_name, dob, id)
+    member = Member(first_name, last_name, dob, active, id)
     member_repository.update(member)
 
     this_member = member_repository.select(id)

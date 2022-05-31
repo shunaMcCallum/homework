@@ -1,3 +1,4 @@
+from operator import truediv
 from db.run_sql import run_sql
 from models.member import Member
 from models.workout import Workout
@@ -6,8 +7,8 @@ import repositories.workout_repository as workout_repository
 
 def save(member):
     
-    sql = "INSERT INTO members(first_name, last_name, dob) VALUES (?, ?, ?) RETURNING id"
-    values = [member.first_name, member.last_name, member.dob]
+    sql = "INSERT INTO members(first_name, last_name, dob, active) VALUES (?, ?, ?, ?) RETURNING id"
+    values = [member.first_name, member.last_name, member.dob, member.active]
     results = run_sql(sql, values)
     member.id = results[0]['id']
     return member
@@ -19,10 +20,11 @@ def sort_function(member):
 
 def select_all():
     members = []
+
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['dob'], row['id'])
+        member = Member(row['first_name'], row['last_name'], row['dob'], row['active'], row['id'])
         members.append(member)
     members.sort(key=sort_function)
     return members
@@ -35,7 +37,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        member = Member(result['first_name'], result['last_name'], result['dob'], result['id'])
+        member = Member(result['first_name'], result['last_name'], result['dob'], result['active'], result['id'])
     return member
 
 
@@ -51,8 +53,8 @@ def delete(id):
 
 
 def update(member):
-    sql = "UPDATE members SET (first_name, last_name, dob) = (?, ?, ?) WHERE id = ?"
-    values = [member.first_name, member.last_name, member.dob, member.id]
+    sql = "UPDATE members SET (first_name, last_name, dob, active) = (?, ?, ?, ?) WHERE id = ?"
+    values = [member.first_name, member.last_name, member.dob, member.active, member.id]
     run_sql(sql, values)
 
 

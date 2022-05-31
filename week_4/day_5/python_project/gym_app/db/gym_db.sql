@@ -8,7 +8,8 @@ CREATE TABLE members (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name VARCHAR,
     last_name VARCHAR,
-    dob DATE
+    dob DATE,
+    active BOOLEAN
 );
 
 CREATE TABLE workouts (

@@ -3,39 +3,57 @@
 {% block content %}
 <div class="edit_page_container">
 
-<h1>update member</h1>
+    <h1>update member</h1>
 
-<form class="edit_form" action="/members/{{member.id}}" method="post">
-    <table class="edit_table">
-    <tr>
-        <td>
-            <label class="edit_form_label" for="first_name">First Name</label>
-        </td>
-        <td>
-            <input class="edit_form_input" type="text" id="first_name" name="first_name" value={{member.first_name}} placeholder={{member.first_name}} required autofocus>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="edit_form_label" for="last_name">Last Name</label>
-        </td>
-        <td>
-            <input class="edit_form_input" type="text" id="last_name" name="last_name" value={{member.last_name}} placeholder={{member.last_name}} required>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label class="edit_form_label" for={{member.dob}}>Date of Birth</label>
-        </td>
-        <td>
-            <input class="edit_form_input" type="date" id="dob" name="dob" value={{member.dob}} required>
-        </td>
-    </tr>
-    </table>
-    <div>
-        <button class="edit_page_button" type="submit">Submit</button>
-    </div>
-</form>
+    <form class="edit_form" action="/members/{{member.id}}" method="post">
+        <table class="edit_table">
+            <tr>
+                <td>
+                    <label class="edit_form_label" for="first_name">First Name</label>
+                </td>
+                <td>
+                    <input class="edit_form_input" type="text" id="first_name" name="first_name"
+                        value={{member.first_name}} placeholder={{member.first_name}} required autofocus>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="edit_form_label" for="last_name">Last Name</label>
+                </td>
+                <td>
+                    <input class="edit_form_input" type="text" id="last_name" name="last_name"
+                        value={{member.last_name}} placeholder={{member.last_name}} required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="edit_form_label" for={{member.dob}}>Date of Birth</label>
+                </td>
+                <td>
+                    <input class="edit_form_input" type="date" id="dob" name="dob" value={{member.dob}} required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="edit_form_label" for={{member.active}}>Active</label>
+                </td>
+                <td>
+                    <select class="edit_form_input" id="active" name="active">
+                        <option value="member.active">{{member.active}}</option>
+
+                        {% if {{member.active}} == True %}
+                        <option value=False>False</option>
+                        {% elif {{member.active}} == False %}
+                        <option value=True>True</option>
+                        {% endif %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <button class="edit_page_button" type="submit">Submit</button>
+        </div>
+    </form>
 
 </div>
 
