@@ -20,8 +20,8 @@
 </div>
 
 <div id="show_page_top_buttons">
-<button class="show_page_button"><a class="show_page_link" href="/workouts/{{workout.id}}/update">Update Details</a></button>
-<form action="/workouts/{{workout.id}}/delete" method="POST"><button class="show_page_button">Delete Workout</button></form>
+<button class="show_page_button" id="update_button"><a class="show_page_link" href="/workouts/{{workout.id}}/update">Update Details</a></button>
+<form action="/workouts/{{workout.id}}/delete" method="POST"><button class="show_page_button" id="delete_button">Delete Workout</button></form>
 </div>
 
 <h3 class="bookings_header">Bookings:</h3>
@@ -43,7 +43,7 @@
         </td>
         <td>
             <form action="/bookings/workout/{{booking.id}}/delete" method="POST">
-                <button class="show_page_button">Delete Booking</button>
+                <button class="show_page_button" id="show_page_delete_button">Delete Booking</button>
             </form>
         </td>
     </tr>

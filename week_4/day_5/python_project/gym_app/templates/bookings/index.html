@@ -25,13 +25,13 @@
         <td><a class="index_page_link" id="index_page_link_bookings" href="/workouts/{{booking.workout.id}}">{{booking.workout.name}}</a></td>
         <td>
             <form action="/bookings/{{booking.id}}/delete" method="POST">
-                <button class="index_page_button">Delete</button>
+                <button class="index_page_button" id="view_details_button">Delete</button>
             </form>
         </td>
         {% endfor %}
     </table>
 
-    <button class="index_page_button" id="index_page_button_bottom">
+    <button class="index_page_button" id="index_page_bottom_button">
         <a class="index_page_link" href="/bookings/create">Add New Booking</a>
     </button>
 

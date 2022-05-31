@@ -31,6 +31,7 @@ import repositories.booking_repository as booking_repository
 # booking4 = Booking(member2, workout1)
 # booking_repository.save(booking4)
 
+
 # Testing issue - workout name and description lost when updating
 # workouts = workout_repository.select_all()
 # for workout in workouts:

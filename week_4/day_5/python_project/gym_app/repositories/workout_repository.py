@@ -68,9 +68,10 @@ def update(workout):
     values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled, workout.active, workout.id]
     run_sql(sql, values)
 
+
 def get_members(workout):
     members = []
-    
+
     sql = "SELECT members.* from members INNER JOIN bookings ON members.id = bookings.member_id WHERE workout_id = ?"
     values = [workout.id]
     results = run_sql(sql, values)
@@ -80,6 +81,7 @@ def get_members(workout):
         member = Member(row['first_name'], row['last_name'], row['dob'], active, row['id'])
         members.append(member)
     return members
+
 
 def get_bookings(workout):
     bookings = []
@@ -95,12 +97,14 @@ def get_bookings(workout):
         bookings.append(booking)
     return bookings
 
+
 def update_capacity_filled(workout):
     workout.capacity_filled += 1
 
     sql = "UPDATE workouts SET (capacity_filled) = (?) WHERE id = ?"
     values = [workout.capacity_filled, workout.id]
     run_sql(sql, values)
+
 
 def reduce_capacity_filled(workout):
     workout.capacity_filled -= 1

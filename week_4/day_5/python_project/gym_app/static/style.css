@@ -40,10 +40,19 @@ body {
     display: inline;
     margin: 5px 1px;
     padding: 22px;
+    border-radius: 8px;
+    border: none;
+}
+
+.nav_item:active {
+    transform: translateX(1.5px) translateY(1.5px);
+}
+
+.nav_item > a {
+    color: white;
     text-align: center;
     text-decoration: none;
-    color: white;
-    border-radius: 8px;
+    font-size: large;
 }
 
 #nav_home {
@@ -88,8 +97,33 @@ body {
     margin: 40px auto;
 }
 
+.page_container > h3 {
+    margin-top: 0px;
+}
+
+#top_para {
+    margin-bottom: 4px;
+}
+
+#bottom_para {
+    margin-top: 3px;
+}
+
 .home_list {
-    margin: 0px 5px;
+    margin: 0px 0px;
     text-align: center;
     padding: 10px;
+    font-weight: bold;
+}
+
+#home_list_1 {
+    color: #69add5;
+}
+
+#home_list_2 {
+    color: #ee4646;
+}
+
+#home_list_3 {
+    color: #2ea52e;
 }

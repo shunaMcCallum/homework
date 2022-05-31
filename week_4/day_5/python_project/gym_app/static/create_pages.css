@@ -31,3 +31,7 @@
     background-color: #aeaeae;
 }
 
+.create_page_button:active {
+    transform: translateX(1.5px) translateY(1.5px);
+}
+

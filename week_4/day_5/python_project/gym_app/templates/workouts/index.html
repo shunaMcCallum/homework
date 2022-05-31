@@ -29,7 +29,7 @@
             {% elif workout.active == False %}
             <td><i class="fa-solid fa-xmark" style="color: red"></i></td>
             {% endif %}
-            <td><button class="index_page_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
+            <td><button class="index_page_button" id="view_details_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
         {% endfor %}
         </tr>
     </table>
