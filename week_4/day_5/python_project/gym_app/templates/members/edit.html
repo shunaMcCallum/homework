@@ -37,14 +37,14 @@
                 <td>
                     <label class="edit_form_label" for={{member.active}}>Active</label>
                 </td>
-                {% if member.active == 1 %}
+                {% if member.active == True %}
                 <td>
                     <select class="edit_form_input" id="active" name="active">
                         <option value="member.active">{{member.active}}</option>
                         <option value=False>False</option>
                     </select>
                 </td>
-                {% elif member.active == 0 %}
+                {% elif member.active == False %}
                 <td>
                     <select class="edit_form_input" id="active" name="active">
                         <option value="member.active">{{member.active}}</option>

@@ -46,7 +46,6 @@ def select(id):
     sql = "SELECT * FROM workouts where id = ?"
     values = [id]
     result = run_sql(sql, values)[0]
-
     if result is not None:
         active = True if result['active'] == 1 else False
         workout = Workout(result['name'], result['date'], result['description'], result['duration'], result['capacity'], result['capacity_filled'], active, result['id'])

@@ -4,6 +4,7 @@ from models.member import Member
 from models.workout import Workout
 from models.booking import Booking
 import repositories.workout_repository as workout_repository
+import repositories.booking_repository as booking_repository
 
 def save(member):
     

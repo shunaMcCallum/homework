@@ -31,6 +31,27 @@ booking_repository.save(booking3)
 booking4 = Booking(member2, workout1)
 booking_repository.save(booking4)
 
+# Testing issue with updating member information
+# member1.active = False
+# member_repository.update(member1)
+
+# print(member1.__dict__)
+# print("  ")
+
+# members1 = member_repository.select_all()
+# for x in members1:
+#     print(x.__dict__)
+
+# print("  ")
+
+# member1.active = True
+# member_repository.update(member1)
+
+
+# members = member_repository.select_all()
+# for x in members:
+#     print(x.__dict__)
+
 # Testing selecting only active members
 # members = member_repository.select_all_active()
 # for member in members:
