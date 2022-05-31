@@ -52,6 +52,26 @@
             <input class="edit_form_input" type="hidden" id="capacity_filled" name="capacity_filled" value={{workout.capacity_filled}}>
         </td>
         </tr>
+        <tr>
+            <td>
+                <label class="edit_form_label" for={{workout.active}}>Active</label>
+            </td>
+            {% if workout.active == 1 %}
+            <td>
+                <select class="edit_form_input" id="active" name="active">
+                    <option value="workout.active">{{workout.active}}</option>
+                    <option value=False>False</option>
+                </select>
+            </td>
+            {% elif workout.active == 0 %}
+            <td>
+                <select class="edit_form_input" id="active" name="active">
+                    <option value="workout.active">{{workout.active}}</option>
+                    <option value=True>True</option>
+                </select>
+            </td>
+            {% endif %}
+        </tr>
     </table>
     <div>
         <button class="edit_page_button" type="submit">Submit</button>

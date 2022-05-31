@@ -31,6 +31,11 @@ booking_repository.save(booking3)
 booking4 = Booking(member2, workout1)
 booking_repository.save(booking4)
 
+# Testing selecting only active members
+# members = member_repository.select_all_active()
+# for member in members:
+#     print(member.__dict__)
+
 # Testing saving workouts with capacity check
 # workout = booking_repository.check_save_workout(booking2)
 # print(workout)

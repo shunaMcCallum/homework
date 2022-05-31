@@ -17,8 +17,8 @@ def bookings():
 @bookings_blueprint.route("/bookings/create")
 def add_booking():
     route_name = "bookings"
-    members = member_repository.select_all()
-    workouts = workout_repository.select_all()
+    members = member_repository.select_all_active()
+    workouts = workout_repository.select_all_active()
     return render_template("bookings/create.html", route_name=route_name, members=members, workouts=workouts)
 
 # ADD NEW BOOKING FROM MEMBER PAGE
@@ -26,14 +26,14 @@ def add_booking():
 def add_booking_for_member(id):
     route_name = "bookings"
     member = member_repository.select(id)
-    workouts = workout_repository.select_all()
+    workouts = workout_repository.select_all_active()
     return render_template("bookings/create_member.html", route_name=route_name, workouts=workouts, member=member)
 
 # ADD NEW BOOKING FROM WORKOUT PAGE
 @bookings_blueprint.route("/bookings/create/workout/<id>")
 def add_booking_for_workout(id):
     route_name = "bookings"
-    members = member_repository.select_all()
+    members = member_repository.select_all_active()
     workout = workout_repository.select(id)
     return render_template("bookings/create_workout.html", route_name=route_name, workout=workout, members=members)
 

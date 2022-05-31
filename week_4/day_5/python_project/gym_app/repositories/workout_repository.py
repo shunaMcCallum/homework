@@ -5,8 +5,8 @@ from models.booking import Booking
 import repositories.member_repository as member_repository
 
 def save(workout):
-    sql = "INSERT INTO workouts (name, date, description, duration, capacity, capacity_filled) VALUES (?, ?, ?, ?, ?, ?) RETURNING id"
-    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled]
+    sql = "INSERT INTO workouts (name, date, description, duration, capacity, capacity_filled, active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id"
+    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled, workout.active]
     results = run_sql(sql, values)
     workout.id = results[0]['id']
     return workout
@@ -21,8 +21,22 @@ def select_all():
     sql = "SELECT * FROM workouts"
     results = run_sql(sql)
     for row in results:
-        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['capacity_filled'], row['id'])
+        active = True if row['active'] == 1 else False
+        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['capacity_filled'], active, row['id'])
         workouts.append(workout)
+    workouts.sort(key=sort_fuction)
+    return workouts
+
+
+def select_all_active():
+    workouts = []
+    sql = "SELECT * FROM workouts"
+    results = run_sql(sql)
+    for row in results:
+        active = True if row['active'] == 1 else False
+        if active == True:
+            workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['capacity_filled'], active, row['id'])
+            workouts.append(workout)
     workouts.sort(key=sort_fuction)
     return workouts
 
@@ -34,7 +48,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        workout = Workout(result['name'], result['date'], result['description'], result['duration'], result['capacity'], result['capacity_filled'], result['id'])
+        active = True if result['active'] == 1 else False
+        workout = Workout(result['name'], result['date'], result['description'], result['duration'], result['capacity'], result['capacity_filled'], active, result['id'])
     return workout
 
 
@@ -50,8 +65,8 @@ def delete(id):
 
 
 def update(workout):
-    sql = "UPDATE workouts SET (name, date, description, duration, capacity, capacity_filled) = (?, ?, ?, ?, ?, ?) WHERE id = ?"
-    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled, workout.id]
+    sql = "UPDATE workouts SET (name, date, description, duration, capacity, capacity_filled, active) = (?, ?, ?, ?, ?, ?, ?) WHERE id = ?"
+    values = [workout.name, workout.date, workout.description, workout.duration, workout.capacity, workout.capacity_filled, workout.active, workout.id]
     run_sql(sql, values)
 
 def get_members(workout):
@@ -62,7 +77,8 @@ def get_members(workout):
     results = run_sql(sql, values)
 
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['dob'], row['id'])
+        active = True if row['active'] == 1 else False
+        member = Member(row['first_name'], row['last_name'], row['dob'], active, row['id'])
         members.append(member)
     return members
 

@@ -19,7 +19,8 @@ CREATE TABLE workouts (
     description TEXT,
     duration INTEGER,
     capacity INTEGER,
-    capacity_filled INTEGER
+    capacity_filled INTEGER,
+    active BOOLEAN
 );
 
 CREATE TABLE bookings (

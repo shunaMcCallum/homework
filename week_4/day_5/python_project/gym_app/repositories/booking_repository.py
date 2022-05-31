@@ -41,8 +41,8 @@ def save(booking):
     booking.id = results[0]['id']
 
     workout_repository.update_capacity_filled(booking.workout)
-
     return booking
+
 
 def save_with_check(booking):
     workout = workout_repository.select(booking.workout.id)

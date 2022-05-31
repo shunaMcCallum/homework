@@ -24,8 +24,23 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['dob'], row['active'], row['id'])
+        active = True if row['active'] == 1 else False
+        member = Member(row['first_name'], row['last_name'], row['dob'], active, row['id'])
         members.append(member)
+    members.sort(key=sort_function)
+    return members
+
+
+def select_all_active():
+    members = []
+
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+    for row in results:
+        active = True if row['active'] == 1 else False
+        if active == True:
+            member = Member(row['first_name'], row['last_name'], row['dob'], active, row['id'])
+            members.append(member)
     members.sort(key=sort_function)
     return members
 
@@ -37,7 +52,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        member = Member(result['first_name'], result['last_name'], result['dob'], result['active'], result['id'])
+        active = True if result['active'] == 1 else False
+        member = Member(result['first_name'], result['last_name'], result['dob'], active, result['id'])
     return member
 
 
@@ -66,7 +82,8 @@ def get_workouts(member):
     results = run_sql(sql, values)
 
     for row in results:
-        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], row['id'])
+        active = True if row['active'] == 1 else False
+        workout = Workout(row['name'], row['date'], row['description'], row['duration'], row['capacity'], active, row['id'])
         workouts.append(workout)
     return workouts
 

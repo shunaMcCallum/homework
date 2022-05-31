@@ -55,8 +55,9 @@ def update_workout(id):
     duration = request.form['duration']
     capacity = request.form['capacity']
     capacity_filled = request.form['capacity_filled']
+    active = request.form['active']
 
-    workout = Workout(name, date, description, duration, capacity, capacity_filled, id)
+    workout = Workout(name, date, description, duration, capacity, capacity_filled, active, id)
     workout_repository.update(workout)
 
     this_workout = workout_repository.select(id)

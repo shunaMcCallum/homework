@@ -16,6 +16,7 @@
             <th>Duration</th>
             <th>Capacity</th>
             <th>Capacity Filled</th>
+            <th>Active</th>
             <th>View</th>
         </tr>
         {% for workout in workouts %}
@@ -25,6 +26,7 @@
             <td>{{workout.duration}} mins</td>
             <td>{{workout.capacity}}</td>
             <td>{{workout.capacity_filled}}</td>
+            <td>{{workout.active}}</td>
             <td><button class="index_page_button"><a class="index_page_link" href="/workouts/{{workout.id}}">View Details</button></td>
         {% endfor %}
         </tr>
