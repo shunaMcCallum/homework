@@ -59,15 +59,15 @@
             {% if workout.active == 1 %}
             <td>
                 <select class="edit_form_input" id="active" name="active">
-                    <option value={{workout.active}}>{{workout.active}}</option>
-                    <option value=False>False</option>
+                    <option value={{workout.active}}>Yes</option>
+                    <option value=False>No</option>
                 </select>
             </td>
             {% elif workout.active == 0 %}
             <td>
                 <select class="edit_form_input" id="active" name="active">
-                    <option value={{workout.active}}>{{workout.active}}</option>
-                    <option value=True>True</option>
+                    <option value={{workout.active}}>No</option>
+                    <option value=True>Yes</option>
                 </select>
             </td>
             {% endif %}

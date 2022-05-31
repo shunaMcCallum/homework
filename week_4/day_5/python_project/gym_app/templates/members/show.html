@@ -9,9 +9,9 @@
     <div><b>Name: </b>{{member.first_name}} {{member.last_name}}</div>
     <div><b>Date of Birth: </b>{{member.dob}}</div>
     {% if member.active == True %}
-    <div><b>Active: </b><i class="fa-solid fa-check" style="color: green"></i></div>
+    <div><b>Active: </b>Yes</div>
     {% elif member.active == False %}
-    <div><b>Active: </b><i class="fa-solid fa-xmark" style="color: red"></i></div>
+    <div><b>Active: </b>No</div>
     {% endif %}
 </div>
 
