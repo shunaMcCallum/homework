@@ -94,8 +94,8 @@ footer {
     font-style: bold;
     justify-content: center;
     align-items: center;
-    width: auto;
-    margin: 0px;
+    width: 100%;
+    margin-top: auto;
 }
 
 footer>nav>ul {
@@ -140,15 +140,3 @@ footer>nav>ul>li>a {
     padding: 10px;
     font-weight: bold;
 }
-
-/* #home_list_1 {
-    color: #1c6eb6;
-}
-
-#home_list_2 {
-    color: #c12214;
-}
-
-#home_list_3 {
-    color: #029100;
-} */
