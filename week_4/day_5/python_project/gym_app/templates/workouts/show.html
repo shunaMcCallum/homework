@@ -52,6 +52,8 @@
 
 {% if workout.capacity_filled == workout.capacity %}
     <p id="full_message"><b>Sorry this workout is full, you can't add any more bookings.</b></p>
+{% elif workout.active == False %}
+    <p if="full_message"><b>Sorry this workout is inactive, you can't add any bookings.</b></p>
 {% else %}
     <button class="show_page_button" id="show_page_bottom_button">
         <a class="show_page_link" href="/bookings/create/workout/{{workout.id}}">Add New Booking</a>
