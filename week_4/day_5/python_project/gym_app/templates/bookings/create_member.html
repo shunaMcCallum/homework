@@ -25,7 +25,11 @@
                     <select class="create_form_input" id="workout" name="workout_id">
                         <option value="" selected disabled hidden></option>
                         {% for workout in workouts %}
+                        {% if workout.capacity_filled == workout.capacity %}
+                        <option disabled value="{{workout.id}}">{{workout.name}} -- sorry this workout is full</option> 
+                        {% else %}
                         <option value="{{workout.id}}">{{workout.name}}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
                 </td>
