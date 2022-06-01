@@ -33,6 +33,7 @@ def get_workout(id):
     workout = workout_repository.select(booking.workout)
     return workout
 
+
 def get_member(id):
     booking = select(id)
     member = member_repository.select(booking.member)
@@ -66,11 +67,6 @@ def save_with_check(booking):
         return booking
 
 
-def delete_all():
-    sql = "DELETE FROM bookings"
-    run_sql(sql)
-
-
 def delete(id):
     workout = get_workout(id)
     workout_repository.reduce_capacity_filled(workout)
@@ -79,5 +75,10 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+
+
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
 
 

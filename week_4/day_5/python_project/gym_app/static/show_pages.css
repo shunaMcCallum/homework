@@ -79,6 +79,10 @@
     transform: translateX(1.5px) translateY(1.5px);
 }
 
+#full_message {
+    margin-top: 30px;
+}
+
 .bookings_header {
     margin-top: 40px;
 }
