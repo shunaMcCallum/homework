@@ -192,7 +192,52 @@
 * [Static and Dynamic PDA Task](week_05/day_5/Static_and_Dynamic_Task_A/Static_&_Dynamic_Testing.md)
 
 
-## Week 6 - 
+## Week 6 - Javascript Fundamentals
+
+### Day 1
+
+- [JavaScript / Node Intro](week_06/day_1/js_node_intro/js_node_intro.md)
+- [Fundamentals](week_06/day_1/fundamentals/fundamentals.md)
+    + Data Types
+    + Variable Declaration
+    + Control Flow
+    + Truthy / Falsy Values
+    + Equality
+- [Objects, Arrays & Loops](week_06/day_1/objects_arrays_loops/objects_arrays_loops.md)
+- [Functions](week_06/day_1/functions/functions.md)
+- [Scope](week_06/day_1/scope/scope.md) (function vs. block scope with `var`/`let`/`const`)
+- [HW - Scope -  Whodunnit](week_06/day_1/hw_scope_whodunnit/hw_scope_whodunnit.md) 
+
+### Day 2
+
+- [Constructors & Prototypes](week_06/day_2/constructors_prototypes/constructors_prototypes.md)
+- [NPM](week_06/day_2/npm/npm.md)
+- [TDD in JavaScript](week_06/day_2/tdd/tdd.md)
+- [TDD Lab - Painter Decorator](week_06/day_2/lab_tdd_painter_decorator/lab_tdd_painter_decorater.md) 
+- [HW - TDD - Jurassic Park](week_06/day_2/hw_tdd_jurrasic_park/hw_tdd_jurassic_park.md) 
+
+### Day 3
+
+- [Callbacks & Enumeration](week_06/day_3/callbacks_enumeration/callbacks_enumeration.md) 
+  + Built in Array Methods
+  + Higher-order and Callback Functions
+- [Enumeration Lab - Cinema](week_06/day_3/lab_enumeration_callbacks_films/lab_enumeration_callbacks_films.md) 
+- HW - Enumeration (students self-select which they would like to do)  -
+  - [Standard - Traveller](week_06/day_3/hw_enumeration_traveller/hw_enumeration_traveller_brief.md)
+  - [Advanced - Pangram, Isogram, Anagram Finders ](week_06/day_3/hw_advanced_enumeration/hw_enumeration_brief.md) 
+
+### Day 4
+
+- [Intro to the DOM](week_06/day_4/dom_intro/dom_intro.md)
+  + Read / Write DOM
+- [Advanced Dev Tools & Debugging](week_06/day_4/advanced_devtools/advanced_devtools.md) (optional)
+- [Events](week_06/day_4/events/events.md)
+- [Events Lab - Reading List](week_06/day_4/lab_events/lab_events.md) 
+
+### Day 5
+
+
+- [Intro To React - Weekend HW](week_06/day_5/weekend_hw)
 
 
 
