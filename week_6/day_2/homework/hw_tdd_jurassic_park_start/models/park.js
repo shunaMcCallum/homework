@@ -14,14 +14,21 @@ Park.prototype.removeDinosaur = function (dinosaur) {
 };
 
 Park.prototype.findMostAttractiveDinosaur = function () {
-    const value = this.dinosaurs.reduce((max, obj) => (max.guestsAttractedPerDay > obj.guestsAttractedPerDay) ? max : obj);
+    // const value = this.dinosaurs.reduce((max, obj) => (max.guestsAttractedPerDay > obj.guestsAttractedPerDay) ? max : obj);
+    // return value;
+    let value = this.dinosaurs[0];
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.guestsAttractedPerDay > value.guestsAttractedPerDay) {
+            value = dinosaur;
+        };
+    };
     return value;
 };
 
-
 Park.prototype.findDinosaurSpecies = function (species) {
-    let foundDinosaurs = [];
-    for (let dinosaur of this.dinosaurs) {
+    const foundDinosaurs = [];
+
+    for (const dinosaur of this.dinosaurs) {
         if (dinosaur.species === species) {
             foundDinosaurs.push(dinosaur);
         };
@@ -31,27 +38,25 @@ Park.prototype.findDinosaurSpecies = function (species) {
 
 Park.prototype.calculateVisitorsPerDay = function () {
     let total = 0;
-    for (let dinosaur of this.dinosaurs) {
+
+    for (const dinosaur of this.dinosaurs) {
         total += dinosaur.guestsAttractedPerDay;
     };
     return total;
 };
 
 Park.prototype.calculateVisitorsPerYear = function () {
-    let visitorsPerDay = this.calculateVisitorsPerDay();
-    let visitorsPerYear = visitorsPerDay * 365;
-    return visitorsPerYear;
+    return this.calculateVisitorsPerDay() * 365;
 };
 
 Park.prototype.calculateRevenuePerYear = function () {
-    let visitorsPerYear = this.calculateVisitorsPerYear();
-    let revenuePerYear = visitorsPerYear * this.ticketPrice;
-    return revenuePerYear;
+    return this.calculateVisitorsPerYear() * this.ticketPrice;
 };
 
 Park.prototype.removeAllDinosaursOfOneSpecies = function (species) {
-    let newDinosaurList = [];
-    for (let dinosaur of this.dinosaurs) {
+    const newDinosaurList = [];
+
+    for (const dinosaur of this.dinosaurs) {
         if (dinosaur.species !== species) {
             newDinosaurList.push(dinosaur);
         };
@@ -59,17 +64,19 @@ Park.prototype.removeAllDinosaursOfOneSpecies = function (species) {
     this.dinosaurs = newDinosaurList;
 };
 
-// Park.prototype.dinosaurDietTypes = function () {
-//     const dietTypes = {}
+Park.prototype.dinosaurDietTypes = function () {
+    const dietTypes = {}
 
-//     for (let dinosaur of this.dinosaurs) {
-//         let keys = Object.keys(dinosaur)
-//         for (let key in keys) {
-//             dietTypes[key] = 0;
-//         };
-//     };
-//     return dietTypes;
+    for (const dinosaur of this.dinosaurs) {
+        if (dietTypes[dinosaur.diet]) {
+            dietTypes[dinosaur.diet] += 1;
+        }
+        else {
+            dietTypes[dinosaur.diet] = 1;
+        };
+    };
+    return dietTypes;
 
-// };
+};
 
 module.exports = Park;
