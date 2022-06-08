@@ -19,6 +19,7 @@ describe('Traveller', function() {
     journey4 = new Journey('london', 'rome', 'car', 1200);
     journey5 = new Journey('lancaster', 'isle of man', 'ferry', 80);
     journeys = [journey1, journey2, journey3, journey4, journey5];
+    
     traveller = new Traveller(journeys);
   });
 
@@ -27,7 +28,7 @@ describe('Traveller', function() {
     assert.deepStrictEqual(actual, journeys);
   });
 
-  xit('should be able to get the journeys start locations', function() {
+  it('should be able to get the journeys start locations', function() {
     const expected = [
       journey1.startLocation,
       journey2.startLocation,

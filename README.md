@@ -224,7 +224,7 @@
 - [Enumeration Lab - Cinema](week_06/day_3/lab_enumeration_callbacks_films/lab_enumeration_callbacks_films.md) 
 - HW - Enumeration (students self-select which they would like to do)  -
   - [Standard - Traveller](week_06/day_3/hw_enumeration_traveller/hw_enumeration_traveller_brief.md)
-  - [Advanced - Pangram, Isogram, Anagram Finders ](week_06/day_3/hw_advanced_enumeration/hw_enumeration_brief.md) 
+
 
 ### Day 4
 
