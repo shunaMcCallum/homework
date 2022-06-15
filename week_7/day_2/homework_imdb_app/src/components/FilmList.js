@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Film from './Film.js';
 
-const FilmList = ({ films }) => {
+const FilmList = ({films}) => {
     
     const filmNodes = films.map((film) => {
         return (
             <Film film={film} key={film.id} />
-        )
+        );
     });
 
     return (

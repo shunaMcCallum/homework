@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Film = ({ film }) => {
+const Film = ({film}) => {
   
     return (
         

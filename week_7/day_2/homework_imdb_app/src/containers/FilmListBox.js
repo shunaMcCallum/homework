@@ -35,7 +35,7 @@ const FilmListBox = () => {
 
     return (
         <ul className = "filmBox">
-            <FilmBoxHeader />
+            <FilmBoxHeader title="Upcoming Film Releases for UK" />
             <FilmList films={films} />
             <ViewMoreButton />
         </ul>
