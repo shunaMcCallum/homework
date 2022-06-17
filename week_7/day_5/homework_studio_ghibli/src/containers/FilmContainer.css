@@ -18,5 +18,9 @@
 
 #header-text {
     align-self: center;
-    margin-left: 220px;
+    margin-left: 195px;
+}
+
+#chart-header {
+    margin-left: 500px;
 }
