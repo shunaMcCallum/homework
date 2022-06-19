@@ -20,30 +20,28 @@ const FilmContainer = () => {
             .then(data => setFilms(data));
     })
 
-
     const handleFilmSelect = ((film) => {
         setSelectedFilm(film);
+        setPeople([]);
+        // getPeople(film);
+
+        // console.log(films)
+        // console.log(people)
     })
 
-    // useEffect(() => {
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setSelectedFilm(data));
-    //         .then(() => {
-    //             const allPeoplePromises = [];
-    //             for (const personUrl of film.people) {
-    //                 allPeoplePromises.push(fetch(personUrl))
-    //             }
+    const getPeople = ((selectedFilm) => {
+        for (const person of selectedFilm.people) {
+            fetch(person)
+                .then(res => res.json())
+                // .then(data => console.log(data));
+                .then(data => people.push(data));
+        }
+        // setPeople(people);
+        // console.log(people)
 
-    //             Promise.all(allPeoplePromises)
-    //             .then(res => res.json())
-    //             .then(data => console.log(data))
-    //         })
-    // }, [])
-
-    // const filmRatings = films.map((film) =>
-    //     film.rt_score
-    // );
+        return people
+  
+    });
 
     const getFilmRatings = ((films) => {
         const ratings = [];
@@ -66,7 +64,19 @@ const FilmContainer = () => {
         const masterArray = [["Rating Range", "Rating"], array1, array2, array3, array4, array5];
         
         return masterArray;
-    })
+    });
+
+    const getFilmRatings2 = ((films) => {
+        let ratings = [["Release Date", "Rotten Tomato Score"]];
+
+        for (const film of films) {
+            const result = [film.release_date, Number(film.rt_score)]
+            ratings.push(result)
+        }
+
+        return ratings
+    });
+
 
     return (
         <div className="film-box">
@@ -74,11 +84,10 @@ const FilmContainer = () => {
                 <img id="header-image" src="https://www.pngitem.com/pimgs/m/83-834494_studio-ghibli-logo-vector-hd-png-download.png"></img>
                 <h1 id="header-text">Studio Ghibli Films</h1>
             </header>
-            <h4 id="chart-header">Studio Ghibli Films Rotten Tomato Ratings Pie Chart</h4>
-            <FilmChart films={films} getFilmRatings={getFilmRatings} />
+            <FilmChart films={films} getFilmRatings={getFilmRatings} getFilmRatings2={getFilmRatings2} />
             <FilmSelect films={films} onFilmSelect={handleFilmSelect} />
             <div>
-                {selectedFilm ? <FilmDetails film={selectedFilm} /> : null}
+                {selectedFilm ? <FilmDetails film={selectedFilm} getPeople={getPeople} people={people} /> : null}
             </div>
         </div>
     );
