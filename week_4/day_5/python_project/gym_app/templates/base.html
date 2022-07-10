@@ -13,10 +13,11 @@
     <title>the gym</title>
 </head>
 <body>
+<div class="page-wrapper">
     <div class="base">
     <header>
         <h1 class="page_headers">{{route_name}}</h1>
-        <p><i class="fa-solid fa-square" id="square" style="color:#1c6eb6"></i> <i class="fa-solid fa-square" style="color:#c12214"></i>
+        <p class="header-squares"><i class="fa-solid fa-square" id="square" style="color:#1c6eb6"></i> <i class="fa-solid fa-square" style="color:#c12214"></i>
         <i class="fa-solid fa-square" style="color:#029100"></i></p>
     </header>
     <div class="nav_bar">
@@ -34,15 +35,15 @@
         
         {% endblock%}
     </div>
+</div>
 </body>
-<footer>
-    <p> © 2022 the_gym_app</p>
-    <nav>
-        <ul>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
-</footer>
-
+    <footer>
+        <p> © 2022 the_gym_app</p>
+        <nav>
+            <ul>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </footer>
 </html>

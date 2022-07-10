@@ -1,8 +1,12 @@
-/* BASE FILE CSS */
 body {
-    height: 100%;
-    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    min-height: 94vh;
 }
 
 .page_headers {
@@ -15,17 +19,24 @@ body {
 .base {
     margin: 0 auto;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .base>header {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .base>header>p {
     align-self: flex-end;
     margin-bottom: 74px;
+}
+
+.header-squares {
+    margin-right: auto;
 }
 
 .nav_bar {

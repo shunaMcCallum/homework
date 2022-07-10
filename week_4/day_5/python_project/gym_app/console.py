@@ -31,6 +31,18 @@ import repositories.booking_repository as booking_repository
 # booking4 = Booking(member2, workout1)
 # booking_repository.save(booking4)
 
+# member1 = Member("Frasier", "Crane", datetime.datetime(1960, 10, 10))
+# member_repository.save(member1)
+# member2 = Member("Niles", "Crane", datetime.datetime(1963, 7, 7))
+# member_repository.save(member2)
+
+# member = member_repository.select(1)
+# print(member.__dict__)
+
+# Testing Member select_all function returns all data from Members table:
+members = member_repository.select_all()
+for member in members:
+    print(member.__dict__)
 
 # Testing issue - workout name and description lost when updating
 # workouts = workout_repository.select_all()
