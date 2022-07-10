@@ -1,4 +1,3 @@
-from operator import truediv
 from db.run_sql import run_sql
 from models.member import Member
 from models.workout import Workout
@@ -64,9 +63,14 @@ def delete_all():
 
 
 def delete(id):
+    bookings = get_bookings_member(id)
+    for booking in bookings:
+        booking_repository.delete(booking.id)
+        
     sql = "DELETE FROM members WHERE id = ?"
     values = [id]
     run_sql(sql, values)
+
 
 
 def update(member):
@@ -88,16 +92,16 @@ def get_workouts(member):
         workouts.append(workout)
     return workouts
 
-def get_bookings_member(member):
+def get_bookings_member(id):
     bookings = []
     
     sql = "SELECT * from bookings WHERE member_id = ?"
-    values = [member.id]
+    values = [id]
     results = run_sql(sql, values)
 
     for row in results:
-        member1 = select(row['member_id'])
+        member = select(row['member_id'])
         workout = workout_repository.select(row['workout_id'])
-        booking = Booking(member1, workout, row['id'])
+        booking = Booking(member, workout, row['id'])
         bookings.append(booking)
     return bookings

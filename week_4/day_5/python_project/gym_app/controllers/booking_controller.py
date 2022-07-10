@@ -63,7 +63,7 @@ def create_booking_for_member(id):
     booking_repository.save_with_check(booking)
 
     member = member_repository.select(id)
-    bookings = member_repository.get_bookings_member(member)
+    bookings = member_repository.get_bookings_member(id)
 
     return render_template("members/show.html", route_name=route_name, bookings=bookings, member=member)
 
