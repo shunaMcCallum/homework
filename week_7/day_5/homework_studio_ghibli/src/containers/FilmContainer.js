@@ -7,7 +7,6 @@ import './FilmContainer.css';
 const FilmContainer = () => {
 
     const [films, setFilms] = useState([]);
-    const [people, setPeople] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState(null);
 
     useEffect(() => {
@@ -21,27 +20,15 @@ const FilmContainer = () => {
     })
 
     const handleFilmSelect = ((film) => {
-        setSelectedFilm(film);
-        setPeople([]);
-        // getPeople(film);
-
-        // console.log(films)
-        // console.log(people)
+        const fetchPromises = film.people.map((person) => {
+            return fetch(person).then(res => res.json())
+        });
+        Promise.all(fetchPromises)
+            .then(data => {
+                film.peopleList = data;
+                setSelectedFilm(film);
+        })
     })
-
-    const getPeople = ((selectedFilm) => {
-        for (const person of selectedFilm.people) {
-            fetch(person)
-                .then(res => res.json())
-                // .then(data => console.log(data));
-                .then(data => people.push(data));
-        }
-        // setPeople(people);
-        // console.log(people)
-
-        return people
-  
-    });
 
     const getFilmRatings = ((films) => {
         const ratings = [];
@@ -87,7 +74,7 @@ const FilmContainer = () => {
             <FilmChart films={films} getFilmRatings={getFilmRatings} getFilmRatings2={getFilmRatings2} />
             <FilmSelect films={films} onFilmSelect={handleFilmSelect} />
             <div>
-                {selectedFilm ? <FilmDetails film={selectedFilm} getPeople={getPeople} people={people} /> : null}
+                {selectedFilm ? <FilmDetails film={selectedFilm}/> : null}
             </div>
         </div>
     );

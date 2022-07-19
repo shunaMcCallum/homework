@@ -3,6 +3,7 @@ import React from 'react'
 const DropDown = ({categories, onCategorySelect} ) => {
 
     const handleSelect = (event) => {
+        event.preventDefault();
         const chosenIndex = event.target.value;
         const chosenCategory = categories[chosenIndex];
         onCategorySelect(chosenCategory);

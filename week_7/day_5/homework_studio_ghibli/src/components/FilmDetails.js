@@ -1,20 +1,10 @@
 import React from 'react';
 import './FilmDetails.css';
 
-const FilmDetails = ({ film, getPeople, people }) => {
-
-    // const x = getPeople(film)
-
-    // const personList = people.map((person) => {
-    //     return <li>{person.name}</li>
-    // });
-
-    const personList = getPeople(film);
-
-    const persons = personList.map(person => {
-        return <li>{person.name}</li>
+const FilmDetails = ({ film }) => {
+    const peopleList = film.peopleList.map((person, index) => {
+        return <li key={index}>{person.name}</li>
     })
-
 
     return (
         <div className="film-detail">
@@ -28,12 +18,7 @@ const FilmDetails = ({ film, getPeople, people }) => {
                 <p className="film-para"><b>Producer:</b> {film.producer}</p>
                 <p id="synopsis"><b>Synopsis:</b></p>
                 <p className="film-para">{film.description}</p>
-                {/* {personList} */}
-                {/* <ul>{personList}</ul> */}
-                {console.log(personList)}
-                <ul>{persons}</ul>
-                {/* <>{persons}</> */}
-
+                <ul>{peopleList}</ul>
             </div>
 
         </div>
